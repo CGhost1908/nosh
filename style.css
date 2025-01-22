@@ -103,7 +103,6 @@ body{
     position: absolute;
     top: 0; 
     left: 0;
-    z-index: -1;
     border-radius: 0.3em;
     box-shadow: 0 0 8px rgba(50, 81, 219, 0.7);
     transform: scale(1.05) rotate(1deg);
@@ -143,6 +142,7 @@ body{
     left: 10%;
     width: calc(30% - 50px);
     height: calc(100vh - 250px);
+    z-index: 0;
 }
 
 .mockup-description{
