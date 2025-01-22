@@ -181,6 +181,12 @@ body{
     }
 }
 
+@media screen and (max-width: 1700px){
+    .mockup-downlaod-btn{
+        display: none;
+    }
+}
+
 .features{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -192,6 +198,13 @@ body{
     padding: 50px;
     background-color: #3c3c3c;
     color: #fff;
+}
+
+@media screen and (max-width: 1600px){
+    .features {
+        grid-template-columns: 2fr;
+        grid-template-rows: auto;
+    }
 }
 
 @media (max-width: 768px) {
