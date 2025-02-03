@@ -66,10 +66,12 @@ ul{
 *::-webkit-scrollbar{
     width: 5px;
     background: transparent;
+    z-index: 999;
 }
 
 *::-webkit-scrollbar-thumb{
-    background: #464444;
+     z-index: 999;
+     background: #464444;
 }
 
 .toolbar-color div{
