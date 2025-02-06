@@ -1,222 +1,158 @@
 
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <link rel="icon" href="../icon.ico" type="image/x-icon">
-            <title>Data Structres Hafta 6</title>
-        </head>
-        <body>
-            <nav class="top-nav">
-                <img src="../icon.ico" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';" class="top-nav-logo">
-                <h2 class="page-title">Data Structres Hafta 6</h2>
-                <button class="top-nav-button" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';">Download nosh</button>
-            </nav>
-            <div id="content">
-            <h1><font size="6">Data Structres Hafta 6</font></h1><h2><b>Yigin Siralamasi:</b></h2><div>Ikili yigin agaci kullanilir: dizi uzerine en buyuk veya en kucuk&nbsp; eleman secilir ve dizinin sonuna atanir.</div><div>Genellikle en buyuk eleman olur.</div><div><b>Maksimum yigin: </b>Her yiginda bir dugum var ve her zaman cocuklarindan daha buyuktur.</div><div><b>In_place</b>: Ekstra bellek kullanmadan diziyi duzenler.</div><div><br></div><div>Adimlari:</div><div>1- Maksimum yigin olusur(heapify)</div><div>2- Kok elemani sona al</div><div>3- Yeniden yigin yapisi kur</div><div>* Bu islemler siralam olana kadar devam eder.</div><div><br></div><div>Orn/ [4,10,3,5,1]</div><div>Ilk olarak maksimum yigin olusturur.</div><div>[10,5,3,4,1]</div><div><br></div><div>En buyuk elemani sona yerlestir.</div><div>[5,3,4,1,10]</div><div><br></div><div>Yeniden yigin yapisini kur.</div><div>[5,3,4,1,10]</div><div><br></div><div>En buyuk eleman sona yerlesir</div><div>[1,3,4,5,10]</div><div><br></div><div class="code-block-layer" contenteditable="false"><p>python</p><iconify-icon icon="typcn:delete" class="delete-code-button"></iconify-icon></div><textarea language="python" name="code" class="code" style="display: none;">#yigin yapisini duzenleyen fonksiyon
-def heapify(arr, n, i):
-	largest = i #kok
-	left = 2 * i+1 #sol cocuk
-	right = 2 * i+2 # sag cocuk
-	
-	#sol cocuk kokten buyukse
-	if left &lt; n and arr(left) &gt; arr[largest]:
-		largest = left
-	
-	#sag cocuk en buyukten buyukse
-	if right &lt; n and arr(right) &gt; arr[largest]:
-		largest = right
-		
-	#eger en buyuk kok degilse
-	if largest !=i:
-		arr[i], arr[largest] = arr[largest], arr[i] # degistirme islemi
-	
-		#alt agaca heapify uygulama
-		heapify(arr, n, largest)
-	
-	#ana yigin siralama fonksiyonu
-	def heap_sort(arr):
-		n = len(arr)
-		#maksimum yigin olusturma 
-		for i in range (n//2-1,-1,1):
-			heapify(arr, i, 0)
-			
-		#birer birer elemanlari diziden cikar
-		for i in range(n-1,0,-1):
-			arr[i], arr[0] = arr[0], arr[i] #koku son eleman ile degistir
-			heapify(arr, i, 0) #diziden eleman azaldikca yeniden yigin yapisi
-	
-arr = [12,11,13,5,7,6]
-print("Orjinal dizi: ", arr)
-heap_sort(arr)
-print("Sirali dizi: ", arr)</textarea><div class="CodeMirror cm-s-dracula" translate="no" style="clip-path: inset(0px); width: 100%; height: auto;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 33px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 29px; margin-bottom: -5px; border-right-width: 45px; min-height: 785px; min-width: 446.219px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 21px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">#yigin yapisini duzenleyen fonksiyon</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">heapify</span>(<span class="cm-variable">arr</span>, <span class="cm-variable">n</span>, <span class="cm-variable">i</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">largest</span> <span class="cm-operator">=</span> <span class="cm-variable">i</span> <span class="cm-comment">#kok</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">left</span> <span class="cm-operator">=</span> <span class="cm-number">2</span> <span class="cm-operator">*</span> <span class="cm-variable">i</span><span class="cm-operator">+</span><span class="cm-number">1</span> <span class="cm-comment">#sol cocuk</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">right</span> <span class="cm-operator">=</span> <span class="cm-number">2</span> <span class="cm-operator">*</span> <span class="cm-variable">i</span><span class="cm-operator">+</span><span class="cm-number">2</span> <span class="cm-comment"># sag cocuk</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">#sol cocuk kokten buyukse</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span> <span class="cm-variable">left</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span> <span class="cm-keyword">and</span> <span class="cm-variable">arr</span>(<span class="cm-variable">left</span>) <span class="cm-operator">&gt;</span> <span class="cm-variable">arr</span>[<span class="cm-variable">largest</span>]:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">largest</span> <span class="cm-operator">=</span> <span class="cm-variable">left</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">#sag cocuk en buyukten buyukse</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span> <span class="cm-variable">right</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">n</span> <span class="cm-keyword">and</span> <span class="cm-variable">arr</span>(<span class="cm-variable">right</span>) <span class="cm-operator">&gt;</span> <span class="cm-variable">arr</span>[<span class="cm-variable">largest</span>]:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">largest</span> <span class="cm-operator">=</span> <span class="cm-variable">right</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">#eger en buyuk kok degilse</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span> <span class="cm-variable">largest</span> <span class="cm-operator">!=</span><span class="cm-variable">i</span>:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">arr</span>[<span class="cm-variable">i</span>], <span class="cm-variable">arr</span>[<span class="cm-variable">largest</span>] <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-variable">largest</span>], <span class="cm-variable">arr</span>[<span class="cm-variable">i</span>] <span class="cm-comment"># degistirme islemi</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">#alt agaca heapify uygulama</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">heapify</span>(<span class="cm-variable">arr</span>, <span class="cm-variable">n</span>, <span class="cm-variable">largest</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">#ana yigin siralama fonksiyonu</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">def</span> <span class="cm-def">heap_sort</span>(<span class="cm-variable">arr</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">n</span> <span class="cm-operator">=</span> <span class="cm-builtin">len</span>(<span class="cm-variable">arr</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">#maksimum yigin olusturma </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">for</span> <span class="cm-variable">i</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span> (<span class="cm-variable">n</span><span class="cm-operator">//</span><span class="cm-number">2</span><span class="cm-operator">-</span><span class="cm-number">1</span>,<span class="cm-operator">-</span><span class="cm-number">1</span>,<span class="cm-number">1</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">heapify</span>(<span class="cm-variable">arr</span>, <span class="cm-variable">i</span>, <span class="cm-number">0</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">#birer birer elemanlari diziden cikar</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">for</span> <span class="cm-variable">i</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-variable">n</span><span class="cm-operator">-</span><span class="cm-number">1</span>,<span class="cm-number">0</span>,<span class="cm-operator">-</span><span class="cm-number">1</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">arr</span>[<span class="cm-variable">i</span>], <span class="cm-variable">arr</span>[<span class="cm-number">0</span>] <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-number">0</span>], <span class="cm-variable">arr</span>[<span class="cm-variable">i</span>] <span class="cm-comment">#koku son eleman ile degistir</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">heapify</span>(<span class="cm-variable">arr</span>, <span class="cm-variable">i</span>, <span class="cm-number">0</span>) <span class="cm-comment">#diziden eleman azaldikca yeniden yigin yapisi</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">arr</span> <span class="cm-operator">=</span> [<span class="cm-number">12</span>,<span class="cm-number">11</span>,<span class="cm-number">13</span>,<span class="cm-number">5</span>,<span class="cm-number">7</span>,<span class="cm-number">6</span>]</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">print</span>(<span class="cm-string">"Orjinal dizi: "</span>, <span class="cm-variable">arr</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">36</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">heap_sort</span>(<span class="cm-variable">arr</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">37</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">print</span>(<span class="cm-string">"Sirali dizi: "</span>, <span class="cm-variable">arr</span>)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 45px; width: 1px; border-bottom: 0px solid transparent; top: 785px;"></div><div class="CodeMirror-gutters" style="height: 830px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div><p class="empty-line" tabindex="0" style="height: 18px;"><br></p><h2 style="height: 18px;">Hizli Siralama Algoritmasi(Quick Sort):</h2><div><br></div><div><ul><li>Bol ve fethet mantigiyla calisir.</li><li>Dizi kucuk parcalara bolunup siralanir.</li></ul>Adimlari:</div><div>1- Pivot secimi: Diziyi bolen eleman secilir:</div><div>2- Diziyi parcalama: Pivot elemandan kucukler sola buyuk elemanlar saga seklinde parcalar.</div><div>3- Tekrarlama: Solda ve sagda kalan parcalar rekursif olarak siralama yapacak,.</div><div><br></div><div>Orn/ [10,80,30,90,40,50,70]</div><div>1. Pivot secimi: 70</div><div>&nbsp; &nbsp; a. Sol tarafa 70den kucuk elemanlar: [10,30,40,50]</div><div>&nbsp; &nbsp; b. Sag tarafa 70den buyuk elemanlar: [80,90]</div><div><br></div><div>&nbsp; &nbsp; Dizi: [10,40,30,50,70,80,90]</div><div>&nbsp; &nbsp; Sol alt dizi: [10,40,30,50] pivot secimi: 40 -&gt; sol [10,30] sag [50]</div><div>&nbsp; &nbsp; Sol [10.30] eksenoyuncu secimi = 30 -&gt; sol[10] sag[30]</div><div><br></div><div><br></div><div>Zaman karmasikligi:</div><div>&nbsp; &nbsp; En iyi durum = O(n log n) : dizi ortadan ikiye bolunecek sekilde parcalanirsa</div><div>&nbsp; &nbsp; En kotu durum = O(n^2) : dizi surekli dengesiz olarak bolunuyorsa</div><div>&nbsp; &nbsp; Ortalama durum = O(n log n)</div><div>&nbsp; &nbsp;&nbsp;</div><div class="code-block-layer" contenteditable="false"><p>python</p><iconify-icon icon="typcn:delete-outline" class="delete-code-button"></iconify-icon></div><textarea language="python" name="code" class="code" style="display: none;"># diziyi bolme islemi
-def partition(arr, low, high):
-	pivot = arr[high] #son eleman pivot olarak secilir
-	i = low-1 #kucuk elemanlarin indeksi takip edilir
-	
-	for j in range(low,high):
-		if arr[j] &lt; pivot:
-			i += 1 #kucuk elemanlari saga kaydirir
-			arr[i], arr[j] = arr[j], arr[i] #degistirme
-	
-	#pivot dogru yerine yerlessin
-	arr[i+1], arr[high] = arr[high], arr[i+1]
-	return i+1
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <link rel="icon" href="../icon.ico" type="image/x-icon">
+                <title>update_patch2</title>
+            </head>
+            <body>
+                <nav class="top-nav">
+                    <img src="../icon.ico" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';" class="top-nav-logo">
+                    <h2 class="page-title">update_patch2</h2>
+                    <button class="top-nav-button" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';">Download nosh</button>
+                </nav>
+                <div id="content">
+                <h1 style="white-space-collapse: collapse;"><font size="7" style="white-space-collapse: collapse;">1.2 Big Update</font></h1><h1><div style="font-size: medium; font-weight: 400;"><ul><li><font size="5" style="white-space-collapse: collapse;">Added Spotify player integration.</font></li><li><font size="5" style="white-space-collapse: collapse;">Implemented save warning feature.</font></li><li><font size="5" style="white-space-collapse: collapse;">Fixed bug related to undo functionality in code blocks.</font></li><li><font size="5" style="white-space-collapse: collapse;">Reworked and fixed renaming functionality.</font></li><li><font size="5" style="white-space-collapse: collapse;">Improved UI/UX of the toolbar.</font></li><li><font size="5" style="white-space-collapse: collapse;">Fixed minor bugs.</font></li></ul></div></h1>
+                </div>
+            </body>
+            </html>
+            <style>
+                #content{
+                    width: 100%;
+                    max-width: 840px !important;
+                }
 
-#hizli siralama fonksiyonu
-def quick_sort(arr, low, high):
-	if low&lt; high:
-		#diziyi bolme islemi baslasin
-		pi = partition(arr, low, high)
-		
-		#bol ve fethet mantigi ile sol ve sag dizileri sirala
-		quick_sort(arr, low, pi-1)
-		quick_sort(arr, pi+1, high)
+                body{
+                    padding: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
 
-#test
-arr = [10,80,30,90,40,50,70]
-print("Orjinal dizi: ", arr)
-quick_sort(arr, 0, len(arr)-1)
-print("Sirali dizi: ", arr)</textarea><div class="CodeMirror cm-s-dracula" translate="no" style="clip-path: inset(0px); width: 100%; height: auto;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 33px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 29px; margin-bottom: -5px; border-right-width: 45px; min-height: 617px; min-width: 337.25px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 21px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># diziyi bolme islemi</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">partition</span>(<span class="cm-variable">arr</span>, <span class="cm-variable">low</span>, <span class="cm-variable">high</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">pivot</span> <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-variable">high</span>] <span class="cm-comment">#son eleman pivot olarak secilir</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">low</span><span class="cm-operator">-</span><span class="cm-number">1</span> <span class="cm-comment">#kucuk elemanlarin indeksi takip edilir</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">for</span> <span class="cm-variable">j</span> <span class="cm-keyword">in</span> <span class="cm-builtin">range</span>(<span class="cm-variable">low</span>,<span class="cm-variable">high</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span> <span class="cm-variable">arr</span>[<span class="cm-variable">j</span>] <span class="cm-operator">&lt;</span> <span class="cm-variable">pivot</span>:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">i</span> <span class="cm-operator">+=</span> <span class="cm-number">1</span> <span class="cm-comment">#kucuk elemanlari saga kaydirir</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">arr</span>[<span class="cm-variable">i</span>], <span class="cm-variable">arr</span>[<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-variable">j</span>], <span class="cm-variable">arr</span>[<span class="cm-variable">i</span>] <span class="cm-comment">#degistirme</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">#pivot dogru yerine yerlessin</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">arr</span>[<span class="cm-variable">i</span><span class="cm-operator">+</span><span class="cm-number">1</span>], <span class="cm-variable">arr</span>[<span class="cm-variable">high</span>] <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-variable">high</span>], <span class="cm-variable">arr</span>[<span class="cm-variable">i</span><span class="cm-operator">+</span><span class="cm-number">1</span>]</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">return</span> <span class="cm-variable">i</span><span class="cm-operator">+</span><span class="cm-number">1</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">#hizli siralama fonksiyonu</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">quick_sort</span>(<span class="cm-variable">arr</span>, <span class="cm-variable">low</span>, <span class="cm-variable">high</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-keyword">if</span> <span class="cm-variable">low</span><span class="cm-operator">&lt;</span> <span class="cm-variable">high</span>:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">#diziyi bolme islemi baslasin</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">pi</span> <span class="cm-operator">=</span> <span class="cm-variable">partition</span>(<span class="cm-variable">arr</span>, <span class="cm-variable">low</span>, <span class="cm-variable">high</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">#bol ve fethet mantigi ile sol ve sag dizileri sirala</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">quick_sort</span>(<span class="cm-variable">arr</span>, <span class="cm-variable">low</span>, <span class="cm-variable">pi</span><span class="cm-operator">-</span><span class="cm-number">1</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">quick_sort</span>(<span class="cm-variable">arr</span>, <span class="cm-variable">pi</span><span class="cm-operator">+</span><span class="cm-number">1</span>, <span class="cm-variable">high</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">#test</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">arr</span> <span class="cm-operator">=</span> [<span class="cm-number">10</span>,<span class="cm-number">80</span>,<span class="cm-number">30</span>,<span class="cm-number">90</span>,<span class="cm-number">40</span>,<span class="cm-number">50</span>,<span class="cm-number">70</span>]</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">print</span>(<span class="cm-string">"Orjinal dizi: "</span>, <span class="cm-variable">arr</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">quick_sort</span>(<span class="cm-variable">arr</span>, <span class="cm-number">0</span>, <span class="cm-builtin">len</span>(<span class="cm-variable">arr</span>)<span class="cm-operator">-</span><span class="cm-number">1</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">print</span>(<span class="cm-string">"Sirali dizi: "</span>, <span class="cm-variable">arr</span>)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 45px; width: 1px; border-bottom: 0px solid transparent; top: 617px;"></div><div class="CodeMirror-gutters" style="height: 662px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div><p class="empty-line" tabindex="0" style="height: 16px;"></p><p class="empty-line" tabindex="0" style="height: 16px;">Siralama algoritmalari:</p><p class="empty-line" tabindex="0" style="height: 16px;"><br></p><p class="empty-line" tabindex="0" style="font-size: medium; height: 16px;"><b>Bubble Sort:</b></p><p class="empty-line" tabindex="0" style="height: 16px;"></p><ul><li>Basit ve anlasilir olmasi avantaj, daha cok kucuk veri setleri icin kullanilir.</li><li>Oldukca verimsiz bir algoritmadir, ozellikle buyuk veri setlerinde cok verimsiz calisir.</li></ul><div><b>Selection Sort:</b></div><div><ul><li>Bellek kullaniminin oldukca dusuk olmasi avantajidir.</li><li>Buyuk veri setleri icin uygun degildir.</li></ul><div><b>Insertion Sort:</b></div></div><div><ul><li>Kucuk veri setleri ve sirali veri setleri icin cok avantajli.</li><li>Buyuk veri setleri icin uygun degildir.</li></ul><div><b>Merge Sort:</b></div></div><div><ul><li>Kararlidir yani her durumda performansli calisir.</li><li>Bellek kullanimi fazla, ozellikle buyuk veri setlerinde bellek tuketimi surekli artmaktadir.</li></ul><div><b>Heap Sort:</b></div></div><div><ul><li>Bellek kullanimi dusuk olmasi avantajidir. Her durumda iyi bir performans saglar.</li><li>Sirali olanlarda vb. diger algoritmalara gore biraz daha yavas calisir.</li></ul><div><b>Quick Sort:</b></div></div><div><ul><li>Ortalama performansi cok iyidir. Ve genel anlamda da en hizli siralama algoritmasidir.</li><li>En kotu durum senaryosu cok yavas olabilir. Ayni degerlere sahip dizilerde sorun yasayabilir yani yavaslayabilir.</li></ul><div>Kucuk veri setleri icin:</div><div>&nbsp; &nbsp; Insertion sort ve bubble sort genel olarak tercih edilir.</div><div>Buyuk veri setleri icin:</div><div>&nbsp; &nbsp; Quick sort, merge sort ve heap sort kullanilabilir.</div><div>Bellek kisitlamasi var ise&nbsp;</div><div>&nbsp; &nbsp; Quick sort, heap sort ve selection sort kullanilabilir.</div><div><br></div><div><u>Hiz acisindan:</u> Quick sort en hizli algoritma, digeri merge sort</div><div><u>Kararlilik:</u> Merge sort tercih edilir. Ayni degerleri siralarken sorun olmaz</div><div><br></div></div><div><br></div><div><br></div><div><br></div><p></p>
-            </div>
-        </body>
-        </html>
-        <style>
-            #content{
-                width: 100%;
-                max-width: 840px !important;
-            }
+                .top-nav{
+                    padding: 0 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100vw;
+                    height: 50px;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background-color: #232323;
+                    z-index: 1000;
+                }
 
-            body{
-                padding: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+                .top-nav-logo{
+                    display: flex;
+                    justify-self: flex-start;
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
+                }
+                .page-title{
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                .top-nav-button{
+                    border: none;
+                    color: #fff;
+                    background-color: transparent;
+                    font-weight: bold;
+                    font-size: 20px;
+                    width: 180px;
+                    margin-right: 20px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+                .top-nav-button:hover{
+                    transform: scale(1.1);
+                    color: #224478FF;
+                }
+            </style>
+            <link rel="stylesheet" href="../view.css">
+            <script>
+            document.querySelectorAll('.delete-code-button').forEach((button) => button.remove());
+            const CodeMirror = require('codemirror');
+            const { basicSetup } = require("@codemirror/basic-setup");
+            const { autocompletion } = require("@codemirror/autocomplete");
+            require('codemirror/lib/codemirror');
+            require('codemirror/addon/edit/closebrackets');
+            require('codemirror/addon/hint/show-hint');
+            require('codemirror/mode/clike/clike');
+            require('codemirror/mode/javascript/javascript');
+            require('codemirror/addon/hint/javascript-hint');
+            require('codemirror/mode/htmlmixed/htmlmixed');
+            require('codemirror/mode/xml/xml');  
+            require('codemirror/addon/hint/html-hint');
+            require('codemirror/mode/css/css');
+            require('codemirror/addon/hint/css-hint');
+            require('codemirror/mode/python/python');
+            require('codemirror/mode/php/php');
+            require('codemirror/mode/ruby/ruby');
+            require('codemirror/mode/go/go');
+            require('codemirror/mode/sql/sql');
+            require('codemirror/mode/shell/shell');
+            require('codemirror/mode/markdown/markdown');
+            require('codemirror/mode/yaml/yaml');
+            require('codemirror/mode/javascript/javascript'); 
+            require('codemirror/mode/haskell/haskell'); 
+            require('codemirror/mode/dart/dart'); 
+            require('codemirror/mode/groovy/groovy'); 
+            require('codemirror/mode/vhdl/vhdl'); 
+            require('codemirror/mode/verilog/verilog'); 
+            require('codemirror/mode/clojure/clojure'); 
+            require('codemirror/mode/swift/swift'); 
+            require('codemirror/mode/rust/rust'); 
+            require('codemirror/mode/elm/elm'); 
+            require('codemirror/mode/crystal/crystal'); 
+            require('codemirror/mode/r/r'); 
+            require('codemirror/mode/d/d'); 
+            require('codemirror/mode/tcl/tcl'); 
+            require('codemirror/mode/powershell/powershell'); 
+            require('codemirror/mode/xml/xml'); 
+            function processCodeBlock(){
+                removeAllCodeMirrors();
+                const codeBlocks = document.querySelectorAll('.code');
+                codeBlocks.forEach((textarea) => {
+                    const language = textarea.getAttribute('language');
 
-            .top-nav{
-                padding: 0 20px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100vw;
-                height: 50px;
-                position: fixed;
-                top: 0;
-                left: 0;
-                background-color: #232323;
-                z-index: 1000;
-            }
-
-            .top-nav-logo{
-                display: flex;
-                justify-self: flex-start;
-                width: 40px;
-                height: 40px;
-                cursor: pointer;
-            }
-            .page-title{
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .top-nav-button{
-                border: none;
-                color: #fff;
-                background-color: transparent;
-                font-weight: bold;
-                font-size: 20px;
-                width: 180px;
-                margin-right: 20px;
-                border-radius: 10px;
-                cursor: pointer;
-                transition: 0.3s;
-            }
-            .top-nav-button:hover{
-                transform: scale(1.1);
-                color: #224478FF;
-            }
-        </style>
-        <link rel="stylesheet" href="../view.css">
-        <script>
-        document.querySelectorAll('.delete-code-button').forEach((button) => button.remove());
-        const CodeMirror = require('codemirror');
-        const { basicSetup } = require("@codemirror/basic-setup");
-        const { autocompletion } = require("@codemirror/autocomplete");
-        require('codemirror/lib/codemirror');
-        require('codemirror/addon/edit/closebrackets');
-        require('codemirror/addon/hint/show-hint');
-        require('codemirror/mode/clike/clike');
-        require('codemirror/mode/javascript/javascript');
-        require('codemirror/addon/hint/javascript-hint');
-        require('codemirror/mode/htmlmixed/htmlmixed');
-        require('codemirror/mode/xml/xml');  
-        require('codemirror/addon/hint/html-hint');
-        require('codemirror/mode/css/css');
-        require('codemirror/addon/hint/css-hint');
-        require('codemirror/mode/python/python');
-        require('codemirror/mode/php/php');
-        require('codemirror/mode/ruby/ruby');
-        require('codemirror/mode/go/go');
-        require('codemirror/mode/sql/sql');
-        require('codemirror/mode/shell/shell');
-        require('codemirror/mode/markdown/markdown');
-        require('codemirror/mode/yaml/yaml');
-        require('codemirror/mode/javascript/javascript'); 
-        require('codemirror/mode/haskell/haskell'); 
-        require('codemirror/mode/dart/dart'); 
-        require('codemirror/mode/groovy/groovy'); 
-        require('codemirror/mode/vhdl/vhdl'); 
-        require('codemirror/mode/verilog/verilog'); 
-        require('codemirror/mode/clojure/clojure'); 
-        require('codemirror/mode/swift/swift'); 
-        require('codemirror/mode/rust/rust'); 
-        require('codemirror/mode/elm/elm'); 
-        require('codemirror/mode/crystal/crystal'); 
-        require('codemirror/mode/r/r'); 
-        require('codemirror/mode/d/d'); 
-        require('codemirror/mode/tcl/tcl'); 
-        require('codemirror/mode/powershell/powershell'); 
-        require('codemirror/mode/xml/xml'); 
-        function processCodeBlock(){
-            removeAllCodeMirrors();
-            const codeBlocks = document.querySelectorAll('.code');
-            codeBlocks.forEach((textarea) => {
-                const language = textarea.getAttribute('language');
-
-                const codeBlock = CodeMirror.fromTextArea(textarea, {
-                    lineNumbers: true,
-                    mode: language,
-                    theme: "dracula",
-                    autoCloseBrackets: true,
-                    indentUnit: 4,
-                    smartIndent: true,
-                    indentWithTabs: true,
-                    matchBrackets: true,
-                    fixedGutter: true,
-                    keyMap: "sublime",
-                    extensions: [
-                        basicSetup,
-                        autocompletion()
-                    ],
+                    const codeBlock = CodeMirror.fromTextArea(textarea, {
+                        lineNumbers: true,
+                        mode: language,
+                        theme: "dracula",
+                        autoCloseBrackets: true,
+                        indentUnit: 4,
+                        smartIndent: true,
+                        indentWithTabs: true,
+                        matchBrackets: true,
+                        fixedGutter: true,
+                        keyMap: "sublime",
+                        extensions: [
+                            basicSetup,
+                            autocompletion()
+                        ],
+                    });
+                    codeBlock.setSize("100%", "auto");
+                    codeBlock.on('change', function(instance) {
+                        let content = instance.getValue();
+                        textarea.textContent = content;
+                    });
                 });
-                codeBlock.setSize("100%", "auto");
-                codeBlock.on('change', function(instance) {
-                    let content = instance.getValue();
-                    textarea.textContent = content;
+            }
+            function removeAllCodeMirrors() {
+                const codeMirrors = document.querySelectorAll('.CodeMirror');
+                codeMirrors.forEach(function(codeMirror) {
+                    codeMirror.remove();
                 });
-            });
-        }
-        function removeAllCodeMirrors() {
-            const codeMirrors = document.querySelectorAll('.CodeMirror');
-            codeMirrors.forEach(function(codeMirror) {
-                codeMirror.remove();
-            });
-        }
-        processCodeBlock();
-        </script>
-        <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/dracula.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
-        <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    
+            }
+            processCodeBlock();
+            </script>
+            <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/dracula.css">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
+            <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+        
