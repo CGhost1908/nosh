@@ -3,16 +3,16 @@
             <html lang="en">
             <head>
                 <link rel="icon" href="../icon.ico" type="image/x-icon">
-                <title>Deneme Projesi</title>
+                <title>Data Structres Hafta 6</title>
             </head>
             <body>
                 <nav class="top-nav">
                     <img src="../icon.ico" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';" class="top-nav-logo">
-                    <h2 class="page-title">Deneme Projesi</h2>
+                    <h2 class="page-title">Data Structres Hafta 6</h2>
                     <button class="top-nav-button" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';">Download nosh</button>
                 </nav>
                 <div id="content">
-                <h1><font size="6">Data Structres Hafta 6</font></h1><h2><b>Yigin Siralamasi:</b></h2><div>Ikili yigin agaci kullanilir: dizi uzerine en buyuk veya en kucuk&nbsp; eleman secilir ve dizinin sonuna atanir.</div><div>Genellikle en buyuk eleman olur.</div><div><b>Maksimum yigin: </b>Her yiginda bir dugum var ve her zaman cocuklarindan daha buyuktur.</div><div><b>In_place</b>: Ekstra bellek kullanmadan diziyi duzenler.</div><div><br></div><div>Adimlari:sdafasdf</div><div>1- Maksimum yigin olusur(heapify)</div><div>2- Kok elemani sona alsadfasdfasdafads</div><div>3- Yeniden yigin yapisi kur</div><div>* Bu islemler siralam olana kadar devam eder.</div><div><br></div><div>Orn/ [4,10,3,5,1]</div><div>Ilk olarak maksimum yigin olusturur.</div><div>[10,5,3,4,1]</div><div><br></div><div>En buyuk elemani sona yerlestir.</div><div>[5,3,4,1,10]</div><div><br></div><div>Yeniden yigin yapisini kur.</div><div>[5,3,4,1,10]</div><div><br></div><div>En buyuk eleman sona yerlesir</div><div>[1,3,4,5,10]</div><div><br></div><div class="code-block-layer" contenteditable="false"><p>python</p><iconify-icon icon="typcn:delete" class="delete-code-button"></iconify-icon></div><textarea language="python" name="code" class="code" style="display: none;">#yigin yapisini duzenleyen fonksiyon
+                <h1><font size="6">Data Structres Hafta 6</font></h1><h2><b>Yigin Siralamasi:</b></h2><div>Ikili yigin agaci kullanilir: dizi uzerine en buyuk veya en kucuk&nbsp; eleman secilir ve dizinin sonuna atanir.</div><div>Genellikle en buyuk eleman olur.</div><div><b>Maksimum yigin: </b>Her yiginda bir dugum var ve her zaman cocuklarindan daha buyuktur.</div><div><b>In_place</b>: Ekstra bellek kullanmadan diziyi duzenler.</div><div><br></div><div>Adimlari:</div><div>1- Maksimum yigin olusur(heapify)</div><div>2- Kok elemani sona al</div><div>3- Yeniden yigin yapisi kur</div><div>* Bu islemler siralam olana kadar devam eder.</div><div><br></div><div>Orn/ [4,10,3,5,1]</div><div>Ilk olarak maksimum yigin olusturur.</div><div>[10,5,3,4,1]</div><div><br></div><div>En buyuk elemani sona yerlestir.</div><div>[5,3,4,1,10]</div><div><br></div><div>Yeniden yigin yapisini kur.</div><div>[5,3,4,1,10]</div><div><br></div><div>En buyuk eleman sona yerlesir</div><div>[1,3,4,5,10]</div><div><br></div><div class="code-block-layer" contenteditable="false"><p>python</p><iconify-icon icon="typcn:delete" class="delete-code-button"></iconify-icon></div><textarea language="python" name="code" class="code" style="display: none;">#yigin yapisini duzenleyen fonksiyon
 def heapify(arr, n, i):
 	largest = i #kok
 	left = 2 * i+1 #sol cocuk
