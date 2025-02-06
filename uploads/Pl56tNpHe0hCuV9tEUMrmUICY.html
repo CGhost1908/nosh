@@ -1,169 +1,159 @@
 
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <link rel="icon" href="../icon.ico" type="image/x-icon">
-            <title>Data Structres Notes</title>
-        </head>
-        <body>
-            <nav class="top-nav">
-                <img src="../icon.ico" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';" class="top-nav-logo">
-                <h2 class="page-title">Data Structres Notes</h2>
-                <button class="top-nav-button" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';">Download nosh</button>
-            </nav>
-            <div id="content">
-            <h3><strong>What are Data Structures?</strong></h3><p>Data structures are ways to organize and store data in a computer so that it can be accessed and modified efficiently. They are fundamental to computer science and programming because they provide a means to manage and manipulate data effectively.</p><h3><strong>Types of Data Structures</strong></h3><ol><li><p><strong>Linear Data Structures</strong><br>Linear data structures arrange data in a sequential order. Examples include:</p></li></ol><ul><li><strong>Arrays</strong></li></ul>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;An array is a collection of elements stored at contiguous memory locations.<div><div class="code-block-layer" contenteditable="false"><p style="color: rgb(255, 255, 255);">python</p><iconify-icon icon="typcn:delete-outline" class="delete-code-button"></iconify-icon></div><textarea language="python" name="code" class="code" style="display: none;">arr = [10, 20, 30, 40]
-print(arr[2])  # Output: 30</textarea><div class="CodeMirror cm-s-dracula" translate="no" style="clip-path: inset(0px); width: 100%; height: auto;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 33px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 29px; margin-bottom: -5px; border-right-width: 45px; min-height: 50px; min-width: 174.625px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 21px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">arr</span> <span class="cm-operator">=</span> [<span class="cm-number">10</span>, <span class="cm-number">20</span>, <span class="cm-number">30</span>, <span class="cm-number">40</span>]</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">print</span>(<span class="cm-variable">arr</span>[<span class="cm-number">2</span>])  <span class="cm-comment"># Output: 30</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 45px; width: 1px; border-bottom: 0px solid transparent; top: 50px;"></div><div class="CodeMirror-gutters" style="height: 95px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div><ul><li><strong>Linked Lists</strong></li></ul>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; A linked list consists of nodes where each node contains data and a pointer/reference to the next node.<div><div class="code-block-layer" contenteditable="false"><p style="color: rgb(255, 255, 255);">python</p><iconify-icon icon="typcn:delete-outline" class="delete-code-button"></iconify-icon></div><textarea language="python" name="code" class="code" style="display: none;">class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <link rel="icon" href="../icon.ico" type="image/x-icon">
+                <title>untitled7</title>
+            </head>
+            <body>
+                <nav class="top-nav">
+                    <img src="../icon.ico" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';" class="top-nav-logo">
+                    <h2 class="page-title">untitled7</h2>
+                    <button class="top-nav-button" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';">Download nosh</button>
+                </nav>
+                <div id="content">
+                <h1 class="content-title">untitled7</h1>
+<p></p>
+                </div>
+            </body>
+            </html>
+            <style>
+                #content{
+                    width: 100%;
+                    max-width: 840px !important;
+                }
 
-# Creating nodes
-node1 = Node(10)
-node2 = Node(20)
-node1.next = node2
-print(node1.data)  # Output: 10
-print(node1.next.data)  # Output: 20</textarea><div class="CodeMirror cm-s-dracula" translate="no" style="clip-path: inset(0px); width: 100%; height: auto;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 33px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 29px; margin-bottom: -5px; border-right-width: 45px; min-height: 239px; min-width: 240.375px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 21px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">class</span> <span class="cm-def">Node</span>:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">def</span> <span class="cm-def">__init__</span>(<span class="cm-variable-2">self</span>, <span class="cm-variable">data</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable-2">self</span>.<span class="cm-property">data</span> <span class="cm-operator">=</span> <span class="cm-variable">data</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable-2">self</span>.<span class="cm-property">next</span> <span class="cm-operator">=</span> <span class="cm-keyword">None</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># Creating nodes</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">node1</span> <span class="cm-operator">=</span> <span class="cm-variable">Node</span>(<span class="cm-number">10</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">node2</span> <span class="cm-operator">=</span> <span class="cm-variable">Node</span>(<span class="cm-number">20</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">node1</span>.<span class="cm-property">next</span> <span class="cm-operator">=</span> <span class="cm-variable">node2</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">print</span>(<span class="cm-variable">node1</span>.<span class="cm-property">data</span>)  <span class="cm-comment"># Output: 10</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">print</span>(<span class="cm-variable">node1</span>.<span class="cm-property">next</span>.<span class="cm-property">data</span>)  <span class="cm-comment"># Output: 20</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 45px; width: 1px; border-bottom: 0px solid transparent; top: 239px;"></div><div class="CodeMirror-gutters" style="height: 284px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div>
-            </div>
-        </body>
-        </html>
-        <style>
-            #content{
-                width: 100%;
-                max-width: 840px !important;
-            }
+                body{
+                    padding: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
 
-            body{
-                padding: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+                .top-nav{
+                    padding: 0 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100vw;
+                    height: 50px;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background-color: #232323;
+                    z-index: 1000;
+                }
 
-            .top-nav{
-                padding: 0 20px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100vw;
-                height: 50px;
-                position: fixed;
-                top: 0;
-                left: 0;
-                background-color: #232323;
-                z-index: 1000;
-            }
+                .top-nav-logo{
+                    display: flex;
+                    justify-self: flex-start;
+                    width: 40px;
+                    height: 40px;
+                    cursor: pointer;
+                }
+                .page-title{
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                .top-nav-button{
+                    border: none;
+                    color: #fff;
+                    background-color: transparent;
+                    font-weight: bold;
+                    font-size: 20px;
+                    width: 180px;
+                    margin-right: 20px;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+                .top-nav-button:hover{
+                    transform: scale(1.1);
+                    color: #224478FF;
+                }
+            </style>
+            <link rel="stylesheet" href="../view.css">
+            <script>
+            document.querySelectorAll('.delete-code-button').forEach((button) => button.remove());
+            const CodeMirror = require('codemirror');
+            const { basicSetup } = require("@codemirror/basic-setup");
+            const { autocompletion } = require("@codemirror/autocomplete");
+            require('codemirror/lib/codemirror');
+            require('codemirror/addon/edit/closebrackets');
+            require('codemirror/addon/hint/show-hint');
+            require('codemirror/mode/clike/clike');
+            require('codemirror/mode/javascript/javascript');
+            require('codemirror/addon/hint/javascript-hint');
+            require('codemirror/mode/htmlmixed/htmlmixed');
+            require('codemirror/mode/xml/xml');  
+            require('codemirror/addon/hint/html-hint');
+            require('codemirror/mode/css/css');
+            require('codemirror/addon/hint/css-hint');
+            require('codemirror/mode/python/python');
+            require('codemirror/mode/php/php');
+            require('codemirror/mode/ruby/ruby');
+            require('codemirror/mode/go/go');
+            require('codemirror/mode/sql/sql');
+            require('codemirror/mode/shell/shell');
+            require('codemirror/mode/markdown/markdown');
+            require('codemirror/mode/yaml/yaml');
+            require('codemirror/mode/javascript/javascript'); 
+            require('codemirror/mode/haskell/haskell'); 
+            require('codemirror/mode/dart/dart'); 
+            require('codemirror/mode/groovy/groovy'); 
+            require('codemirror/mode/vhdl/vhdl'); 
+            require('codemirror/mode/verilog/verilog'); 
+            require('codemirror/mode/clojure/clojure'); 
+            require('codemirror/mode/swift/swift'); 
+            require('codemirror/mode/rust/rust'); 
+            require('codemirror/mode/elm/elm'); 
+            require('codemirror/mode/crystal/crystal'); 
+            require('codemirror/mode/r/r'); 
+            require('codemirror/mode/d/d'); 
+            require('codemirror/mode/tcl/tcl'); 
+            require('codemirror/mode/powershell/powershell'); 
+            require('codemirror/mode/xml/xml'); 
+            function processCodeBlock(){
+                removeAllCodeMirrors();
+                const codeBlocks = document.querySelectorAll('.code');
+                codeBlocks.forEach((textarea) => {
+                    const language = textarea.getAttribute('language');
 
-            .top-nav-logo{
-                display: flex;
-                justify-self: flex-start;
-                width: 40px;
-                height: 40px;
-                cursor: pointer;
-            }
-            .page-title{
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .top-nav-button{
-                border: none;
-                color: #fff;
-                background-color: transparent;
-                font-weight: bold;
-                font-size: 20px;
-                width: 180px;
-                margin-right: 20px;
-                border-radius: 10px;
-                cursor: pointer;
-                transition: 0.3s;
-            }
-            .top-nav-button:hover{
-                transform: scale(1.1);
-                color: #224478FF;
-            }
-        </style>
-        <link rel="stylesheet" href="../view.css">
-        <script>
-        document.querySelectorAll('.delete-code-button').forEach((button) => button.remove());
-        const CodeMirror = require('codemirror');
-        const { basicSetup } = require("@codemirror/basic-setup");
-        const { autocompletion } = require("@codemirror/autocomplete");
-        require('codemirror/lib/codemirror');
-        require('codemirror/addon/edit/closebrackets');
-        require('codemirror/addon/hint/show-hint');
-        require('codemirror/mode/clike/clike');
-        require('codemirror/mode/javascript/javascript');
-        require('codemirror/addon/hint/javascript-hint');
-        require('codemirror/mode/htmlmixed/htmlmixed');
-        require('codemirror/mode/xml/xml');  
-        require('codemirror/addon/hint/html-hint');
-        require('codemirror/mode/css/css');
-        require('codemirror/addon/hint/css-hint');
-        require('codemirror/mode/python/python');
-        require('codemirror/mode/php/php');
-        require('codemirror/mode/ruby/ruby');
-        require('codemirror/mode/go/go');
-        require('codemirror/mode/sql/sql');
-        require('codemirror/mode/shell/shell');
-        require('codemirror/mode/markdown/markdown');
-        require('codemirror/mode/yaml/yaml');
-        require('codemirror/mode/javascript/javascript'); 
-        require('codemirror/mode/haskell/haskell'); 
-        require('codemirror/mode/dart/dart'); 
-        require('codemirror/mode/groovy/groovy'); 
-        require('codemirror/mode/vhdl/vhdl'); 
-        require('codemirror/mode/verilog/verilog'); 
-        require('codemirror/mode/clojure/clojure'); 
-        require('codemirror/mode/swift/swift'); 
-        require('codemirror/mode/rust/rust'); 
-        require('codemirror/mode/elm/elm'); 
-        require('codemirror/mode/crystal/crystal'); 
-        require('codemirror/mode/r/r'); 
-        require('codemirror/mode/d/d'); 
-        require('codemirror/mode/tcl/tcl'); 
-        require('codemirror/mode/powershell/powershell'); 
-        require('codemirror/mode/xml/xml'); 
-        function processCodeBlock(){
-            removeAllCodeMirrors();
-            const codeBlocks = document.querySelectorAll('.code');
-            codeBlocks.forEach((textarea) => {
-                const language = textarea.getAttribute('language');
-
-                const codeBlock = CodeMirror.fromTextArea(textarea, {
-                    lineNumbers: true,
-                    mode: language,
-                    theme: "dracula",
-                    autoCloseBrackets: true,
-                    indentUnit: 4,
-                    smartIndent: true,
-                    indentWithTabs: true,
-                    matchBrackets: true,
-                    fixedGutter: true,
-                    keyMap: "sublime",
-                    extensions: [
-                        basicSetup,
-                        autocompletion()
-                    ],
+                    const codeBlock = CodeMirror.fromTextArea(textarea, {
+                        lineNumbers: true,
+                        mode: language,
+                        theme: "dracula",
+                        autoCloseBrackets: true,
+                        indentUnit: 4,
+                        smartIndent: true,
+                        indentWithTabs: true,
+                        matchBrackets: true,
+                        fixedGutter: true,
+                        keyMap: "sublime",
+                        extensions: [
+                            basicSetup,
+                            autocompletion()
+                        ],
+                    });
+                    codeBlock.setSize("100%", "auto");
+                    codeBlock.on('change', function(instance) {
+                        let content = instance.getValue();
+                        textarea.textContent = content;
+                    });
                 });
-                codeBlock.setSize("100%", "auto");
-                codeBlock.on('change', function(instance) {
-                    let content = instance.getValue();
-                    textarea.textContent = content;
+            }
+            function removeAllCodeMirrors() {
+                const codeMirrors = document.querySelectorAll('.CodeMirror');
+                codeMirrors.forEach(function(codeMirror) {
+                    codeMirror.remove();
                 });
-            });
-        }
-        function removeAllCodeMirrors() {
-            const codeMirrors = document.querySelectorAll('.CodeMirror');
-            codeMirrors.forEach(function(codeMirror) {
-                codeMirror.remove();
-            });
-        }
-        processCodeBlock();
-        </script>
-        <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/dracula.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
-        <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    
+            }
+            processCodeBlock();
+            </script>
+            <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/dracula.css">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
+            <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+        
