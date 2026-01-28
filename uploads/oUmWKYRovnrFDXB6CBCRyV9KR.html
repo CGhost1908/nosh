@@ -1,0 +1,224 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <link rel="icon" href="../icon.ico" type="image/x-icon">
+            <title>untitled1</title>
+        </head>
+        <body>
+            <nav class="top-nav">
+                <img src="../icon.ico" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';" class="top-nav-logo">
+                <h2 class="page-title">untitled1</h2>
+                <button class="top-nav-button" onclick="window.location.href = 'https://cghost1908.github.io/nosh/';">Download nosh</button>
+            </nav>
+            <div id="content">
+            <h1 class="content-title">aaa</h1><div><br></div><div><br></div><div><ol>
+<li>Bir e-ticaret uygulamasında ödeme işlemleri birden fazla yöntemle gerçekleştirilmektedir. Sistemde kredi kartı ve havale ile ödeme seçenekleri bulunmaktadır. Her iki ödeme yöntemi de ödeme tutarını alarak işlemi gerçekleştirmeli ancak ekrana farklı bilgilendirme mesajları yazdırmalıdır. Bu yapıyı esnek ve genişletilebilir olacak şekilde tasarlayarak, kredi kartı ve havale ile ödeme işlemlerini gerçekleştiren sınıfları oluşturunuz. Daha sonra, bu sınıfları ortak bir yapı üzerinden kullanarak ödeme işlemlerinin tek bir değişken aracılığıyla gerçekleştirildiğini gösteren bir Java kodu yazınız.</li>
+</ol><div><br></div>
+<!-- notionvc: 59fadf76-23a0-46f6-a558-ac15da7a463c --></div><div><div class="code-block-layer" contenteditable="false"><p style="color: rgb(255, 255, 255);">text/x-csrc</p><iconify-icon icon="typcn:delete-outline" class="delete-code-button"></iconify-icon></div><textarea language="text/x-csrc" name="code" class="code" style="display: none;">interface Odeme {
+    void ode(double tutar);
+}
+
+class KrediKarti implements Odeme {
+    public void ode(double tutar) {
+        System.out.println("Kredi kartı ile ödeme alındı: " + tutar);
+    }
+}
+
+class Havale implements Odeme {
+    public void ode(double tutar) {
+        System.out.println("Havale ile ödeme alındı: " + tutar);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Odeme o;
+        o = new KrediKarti();
+        o.ode(500);
+        o = new Havale();
+        o.ode(800);
+    }
+}
+
+
+
+------------------------------------------------
+	
+	import java.sql.*;
+
+public class Main {
+
+    static final String URL = "jdbc:mysql://localhost/okul";
+    static final String USER = "root";
+    static final String PASS = "1234";
+
+    public static void main(String[] args) {
+
+        try (Connection c = DriverManager.getConnection(URL, USER, PASS)) {
+
+            ResultSet r = c.createStatement()
+                    .executeQuery("SELECT no, ad FROM ogrenci");
+            while (r.next())
+                System.out.println(r.getInt("no") + " " + r.getString("ad"));
+
+            PreparedStatement ekle =
+                    c.prepareStatement("INSERT INTO ogrenci VALUES (?,?)");
+            ekle.setInt(1, 1);
+            ekle.setString(2, "Ali");
+            ekle.executeUpdate();
+
+            PreparedStatement guncelle =
+                    c.prepareStatement("UPDATE ogrenci SET ad=? WHERE no=?");
+            guncelle.setString(1, "Ali Can");
+            guncelle.setInt(2, 1);
+            guncelle.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println("Veritabanı hatası");
+        }
+    }
+}</textarea><div class="CodeMirror cm-s-dracula" translate="no" style="clip-path: inset(0px); width: 100%; height: auto;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 1327px; left: 37.6719px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; min-height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 29px; margin-bottom: -5px; border-right-width: 45px; min-height: 1352px; min-width: 370.516px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre class="CodeMirror-line-like"><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>25</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 8.67188px; top: 1323px; height: 21px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">interface</span> <span class="cm-variable">Odeme</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-type">void</span> <span class="cm-variable">ode</span>(<span class="cm-type">double</span> <span class="cm-variable">tutar</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">class</span> <span class="cm-variable">KrediKarti</span> <span class="cm-variable">implements</span> <span class="cm-variable">Odeme</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">public</span> <span class="cm-type">void</span> <span class="cm-variable">ode</span>(<span class="cm-type">double</span> <span class="cm-variable">tutar</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">System</span>.<span class="cm-variable">out</span>.<span class="cm-variable">println</span>(<span class="cm-string">"Kredi kartı ile ödeme alındı: "</span> <span class="cm-operator">+</span> <span class="cm-variable">tutar</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">class</span> <span class="cm-variable">Havale</span> <span class="cm-variable">implements</span> <span class="cm-variable">Odeme</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">public</span> <span class="cm-type">void</span> <span class="cm-variable">ode</span>(<span class="cm-type">double</span> <span class="cm-variable">tutar</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">System</span>.<span class="cm-variable">out</span>.<span class="cm-variable">println</span>(<span class="cm-string">"Havale ile ödeme alındı: "</span> <span class="cm-operator">+</span> <span class="cm-variable">tutar</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">public</span> <span class="cm-variable">class</span> <span class="cm-variable">Main</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">public</span> <span class="cm-keyword">static</span> <span class="cm-type">void</span> <span class="cm-variable">main</span>(<span class="cm-variable">String</span>[] <span class="cm-variable">args</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">Odeme</span> <span class="cm-variable">o</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">o</span> <span class="cm-operator">=</span> <span class="cm-variable">new</span> <span class="cm-variable">KrediKarti</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">o</span>.<span class="cm-variable">ode</span>(<span class="cm-number">500</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">o</span> <span class="cm-operator">=</span> <span class="cm-variable">new</span> <span class="cm-variable">Havale</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">o</span>.<span class="cm-variable">ode</span>(<span class="cm-number">800</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-operator">------------------------------------------------</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-variable">import</span> <span class="cm-variable">java</span>.<span class="cm-variable">sql</span>.<span class="cm-operator">*</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">public</span> <span class="cm-variable">class</span> <span class="cm-variable">Main</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">34</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">35</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">static</span> <span class="cm-variable">final</span> <span class="cm-variable">String</span> <span class="cm-variable">URL</span> <span class="cm-operator">=</span> <span class="cm-string">"jdbc:mysql://localhost/okul"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">36</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">static</span> <span class="cm-variable">final</span> <span class="cm-variable">String</span> <span class="cm-variable">USER</span> <span class="cm-operator">=</span> <span class="cm-string">"root"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">37</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-keyword">static</span> <span class="cm-variable">final</span> <span class="cm-variable">String</span> <span class="cm-variable">PASS</span> <span class="cm-operator">=</span> <span class="cm-string">"1234"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">38</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">39</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    <span class="cm-variable">public</span> <span class="cm-keyword">static</span> <span class="cm-type">void</span> <span class="cm-variable">main</span>(<span class="cm-variable">String</span>[] <span class="cm-variable">args</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">40</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">41</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        <span class="cm-variable">try</span> (<span class="cm-variable">Connection</span> <span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-variable">DriverManager</span>.<span class="cm-variable">getConnection</span>(<span class="cm-variable">URL</span>, <span class="cm-variable">USER</span>, <span class="cm-variable">PASS</span>)) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">42</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">43</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-variable">ResultSet</span> <span class="cm-variable">r</span> <span class="cm-operator">=</span> <span class="cm-variable">c</span>.<span class="cm-variable">createStatement</span>()</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">44</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">                    .<span class="cm-variable">executeQuery</span>(<span class="cm-string">"SELECT no, ad FROM ogrenci"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">45</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-keyword">while</span> (<span class="cm-variable">r</span>.<span class="cm-variable">next</span>())</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">46</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">                <span class="cm-variable">System</span>.<span class="cm-variable">out</span>.<span class="cm-variable">println</span>(<span class="cm-variable">r</span>.<span class="cm-variable">getInt</span>(<span class="cm-string">"no"</span>) <span class="cm-operator">+</span> <span class="cm-string">" "</span> <span class="cm-operator">+</span> <span class="cm-variable">r</span>.<span class="cm-variable">getString</span>(<span class="cm-string">"ad"</span>));</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">47</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">48</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-variable">PreparedStatement</span> <span class="cm-variable">ekle</span> <span class="cm-operator">=</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">49</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">                    <span class="cm-variable">c</span>.<span class="cm-variable">prepareStatement</span>(<span class="cm-string">"INSERT INTO ogrenci VALUES (?,?)"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">50</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-variable">ekle</span>.<span class="cm-variable">setInt</span>(<span class="cm-number">1</span>, <span class="cm-number">1</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">51</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-variable">ekle</span>.<span class="cm-variable">setString</span>(<span class="cm-number">2</span>, <span class="cm-string">"Ali"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">52</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-variable">ekle</span>.<span class="cm-variable">executeUpdate</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">53</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">54</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-variable">PreparedStatement</span> <span class="cm-variable">guncelle</span> <span class="cm-operator">=</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">55</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">                    <span class="cm-variable">c</span>.<span class="cm-variable">prepareStatement</span>(<span class="cm-string">"UPDATE ogrenci SET ad=? WHERE no=?"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">56</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-variable">guncelle</span>.<span class="cm-variable">setString</span>(<span class="cm-number">1</span>, <span class="cm-string">"Ali Can"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">57</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-variable">guncelle</span>.<span class="cm-variable">setInt</span>(<span class="cm-number">2</span>, <span class="cm-number">1</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">58</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-variable">guncelle</span>.<span class="cm-variable">executeUpdate</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">59</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">60</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        } <span class="cm-variable">catch</span> (<span class="cm-variable">SQLException</span> <span class="cm-variable">e</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">61</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">            <span class="cm-variable">System</span>.<span class="cm-variable">out</span>.<span class="cm-variable">println</span>(<span class="cm-string">"Veritabanı hatası"</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">62</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">        }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">63</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">    }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" aria-hidden="true" style="left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">64</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 45px; width: 1px; border-bottom: 0px solid transparent; top: 1352px;"></div><div class="CodeMirror-gutters" style="height: 1397px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div>
+            </div>
+        </body>
+        </html>
+        <style>
+            #content{
+                width: 100%;
+                max-width: 840px !important;
+            }
+
+            body{
+                padding: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .top-nav{
+                padding: 0 20px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100vw;
+                height: 50px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #232323;
+                z-index: 1000;
+            }
+
+            .top-nav-logo{
+                display: flex;
+                justify-self: flex-start;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+            }
+            .page-title{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .top-nav-button{
+                border: none;
+                color: #fff;
+                background-color: transparent;
+                font-weight: bold;
+                font-size: 20px;
+                width: 180px;
+                margin-right: 20px;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .top-nav-button:hover{
+                transform: scale(1.1);
+                color: #224478FF;
+            }
+        </style>
+        <link rel="stylesheet" href="../view.css">
+        <script>
+        document.querySelectorAll('.delete-code-button').forEach((button) => button.remove());
+        const CodeMirror = require('codemirror');
+        const { basicSetup } = require("@codemirror/basic-setup");
+        const { autocompletion } = require("@codemirror/autocomplete");
+        require('codemirror/lib/codemirror');
+        require('codemirror/addon/edit/closebrackets');
+        require('codemirror/addon/hint/show-hint');
+        require('codemirror/mode/clike/clike');
+        require('codemirror/mode/javascript/javascript');
+        require('codemirror/addon/hint/javascript-hint');
+        require('codemirror/mode/htmlmixed/htmlmixed');
+        require('codemirror/mode/xml/xml');  
+        require('codemirror/addon/hint/html-hint');
+        require('codemirror/mode/css/css');
+        require('codemirror/addon/hint/css-hint');
+        require('codemirror/mode/python/python');
+        require('codemirror/mode/php/php');
+        require('codemirror/mode/ruby/ruby');
+        require('codemirror/mode/go/go');
+        require('codemirror/mode/sql/sql');
+        require('codemirror/mode/shell/shell');
+        require('codemirror/mode/markdown/markdown');
+        require('codemirror/mode/yaml/yaml');
+        require('codemirror/mode/javascript/javascript'); 
+        require('codemirror/mode/haskell/haskell'); 
+        require('codemirror/mode/dart/dart'); 
+        require('codemirror/mode/groovy/groovy'); 
+        require('codemirror/mode/vhdl/vhdl'); 
+        require('codemirror/mode/verilog/verilog'); 
+        require('codemirror/mode/clojure/clojure'); 
+        require('codemirror/mode/swift/swift'); 
+        require('codemirror/mode/rust/rust'); 
+        require('codemirror/mode/elm/elm'); 
+        require('codemirror/mode/crystal/crystal'); 
+        require('codemirror/mode/r/r'); 
+        require('codemirror/mode/d/d'); 
+        require('codemirror/mode/tcl/tcl'); 
+        require('codemirror/mode/powershell/powershell'); 
+        require('codemirror/mode/xml/xml'); 
+        function processCodeBlock(){
+            removeAllCodeMirrors();
+            const codeBlocks = document.querySelectorAll('.code');
+            codeBlocks.forEach((textarea) => {
+                const language = textarea.getAttribute('language');
+
+                const codeBlock = CodeMirror.fromTextArea(textarea, {
+                    lineNumbers: true,
+                    mode: language,
+                    theme: "dracula",
+                    autoCloseBrackets: true,
+                    indentUnit: 4,
+                    smartIndent: true,
+                    indentWithTabs: true,
+                    matchBrackets: true,
+                    fixedGutter: true,
+                    keyMap: "sublime",
+                    extensions: [
+                        basicSetup,
+                        autocompletion()
+                    ],
+                });
+                codeBlock.setSize("100%", "auto");
+                codeBlock.on('change', function(instance) {
+                    let content = instance.getValue();
+                    textarea.textContent = content;
+                });
+            });
+        }
+        function removeAllCodeMirrors() {
+            const codeMirrors = document.querySelectorAll('.CodeMirror');
+            codeMirrors.forEach(function(codeMirror) {
+                codeMirror.remove();
+            });
+        }
+        processCodeBlock();
+        </script>
+        <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/theme/dracula.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/roundSlider/1.3.2/roundslider.min.css" rel="stylesheet" />
+        <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    
