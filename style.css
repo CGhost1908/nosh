@@ -88,7 +88,7 @@ a {
     left: 0;
     width: 100%;
     height: 68px;
-    background: rgba(9, 10, 15, 0.82);
+    background: rgba(9, 10, 15, 0.85);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border-subtle);
@@ -100,7 +100,7 @@ a {
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    max-width: 1260px;
+    max-width: 1360px;
     margin: 0 auto;
     padding: 0 1.75rem;
 }
@@ -220,36 +220,43 @@ a {
 }
 
 /* ==========================================================================
-   Hero Section: Above-the-fold 2-Column Split Showcase
+   Hero Section: Full Height & Mockup Glued to Right Edge
    ========================================================================== */
 
 .hero-section {
     position: relative;
-    padding: 108px 0 64px 0;
-    min-height: calc(100vh - 68px);
+    padding-top: 68px; /* Nav bar offset */
+    height: 100vh;
+    min-height: 640px;
     display: flex;
     align-items: center;
     background: 
-        radial-gradient(circle at 75% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 55%),
-        radial-gradient(circle at 15% 75%, rgba(56, 189, 248, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 85% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 10% 80%, rgba(56, 189, 248, 0.04) 0%, transparent 50%),
         var(--bg-canvas);
     border-bottom: 1px solid var(--border-subtle);
+    overflow: hidden;
 }
 
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1.18fr;
-    gap: 3.5rem;
+.hero-layout {
+    width: 100%;
+    height: calc(100vh - 68px);
+    display: flex;
     align-items: center;
-    position: relative;
-    z-index: 1;
+    justify-content: space-between;
+    padding-left: clamp(2rem, 5.5vw, 6rem);
+    padding-right: 0; /* Sticks flush to the right edge */
+    gap: 2.5rem;
 }
 
 .hero-content {
+    flex: 0 0 min(540px, 44%);
+    max-width: 540px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    z-index: 2;
 }
 
 .hero-pill {
@@ -378,96 +385,33 @@ a {
     font-size: 0.95rem;
 }
 
-/* Desktop App Window Mockup Frame */
-.hero-preview {
-    width: 100%;
+/* Mockup Pane (Stuck to right, matched to window height) */
+.hero-mockup-pane {
+    flex: 1 1 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     position: relative;
-}
-
-.app-window {
-    background: #11131a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
-    box-shadow: 
-        0 24px 64px -14px rgba(0, 0, 0, 0.85),
-        0 0 35px rgba(99, 102, 241, 0.12);
+    z-index: 1;
     overflow: hidden;
-    transition: var(--transition);
 }
 
-.app-window:hover {
-    border-color: rgba(255, 255, 255, 0.18);
-    transform: translateY(-2px);
-    box-shadow: 
-        0 30px 72px -14px rgba(0, 0, 0, 0.9),
-        0 0 45px rgba(99, 102, 241, 0.18);
-}
-
-.window-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 38px;
-    padding: 0 1rem;
-    background: #161822;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.window-traffic-lights {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.light {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-.light.close { background: #ff5f56; }
-.light.min { background: #ffbd2e; }
-.light.max { background: #27c93f; }
-
-.window-titlebar {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--text-dim);
-}
-
-.window-status-chip {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    color: var(--accent-green);
-    background: rgba(16, 185, 129, 0.08);
-    padding: 0.15rem 0.55rem;
-    border-radius: 4px;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-}
-
-.status-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-green);
-}
-
-.window-stage {
-    background: #0d0e14;
-    line-height: 0;
-}
-
-.window-image {
-    width: 100%;
-    height: auto;
+.hero-mockup-image {
+    height: 100%;
+    max-height: calc(100vh - 72px);
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+    object-position: right center;
     display: block;
-    border-bottom-left-radius: 13px;
-    border-bottom-right-radius: 13px;
+    filter: drop-shadow(-20px 20px 50px rgba(0, 0, 0, 0.75));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero-mockup-image:hover {
+    transform: scale(1.01);
+    filter: drop-shadow(-24px 24px 60px rgba(0, 0, 0, 0.85));
 }
 
 /* ==========================================================================
@@ -1009,15 +953,25 @@ a {
 
 /* ==========================================================================
    Responsive Breakpoints
-   ========================================================================== */
+   ========================================================================= */
 
 @media (max-width: 1080px) {
-    .hero-container {
-        grid-template-columns: 1fr;
+    .hero-section {
+        height: auto;
+        min-height: auto;
+        padding: 96px 1.5rem 50px 1.5rem;
+    }
+
+    .hero-layout {
+        flex-direction: column;
+        height: auto;
+        padding: 0;
         gap: 3rem;
     }
 
     .hero-content {
+        flex: 1 1 auto;
+        max-width: 640px;
         align-items: center;
         text-align: center;
     }
@@ -1032,6 +986,20 @@ a {
 
     .hero-specs {
         justify-content: center;
+    }
+
+    .hero-mockup-pane {
+        height: auto;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-mockup-image {
+        height: auto;
+        max-height: 60vh;
+        width: 100%;
+        max-width: 720px;
+        object-position: center;
     }
 
     .downloads-layout {
@@ -1050,7 +1018,7 @@ a {
     }
 
     .hero-section {
-        padding: 92px 0 48px 0;
+        padding: 88px 1.25rem 40px 1.25rem;
     }
 
     .hero-title {
