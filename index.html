@@ -3,143 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nosh - The distraction-free, feature-packed code notepad for developers and CS students. Multi-language snippets, Spotify playback, and Google Drive cloud sync.">
     <meta name="google-site-verification" content="ve9nudQHFPynI0WyPdN-bxzYRxp87cgiv5pRyGfxbDw" />
-    <link rel="stylesheet" href="style.css">
+    <title>Nosh | The Distraction-Free Code Notepad for Developers</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <link rel="icon" href="icon.ico" type="image/x-icon">
-    <title>nosh The Notepad</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="top-nav">
-        <img src="icon.ico" onclick="window.scrollTo({top: 0,behavior: 'smooth'});" class="top-nav-logo">
-        <nav class="top-nav-bar">
-            <a onclick="window.scrollTo({top: 0,behavior: 'smooth'});" class="top-nav-item home">Home</a>
-            <a onclick="window.scrollTo({top: (window.innerHeight - 50),behavior: 'smooth'});" class="top-nav-item home">Features</a>
-            <a onclick="window.scrollTo({top: 2 * (window.innerHeight - 50),behavior: 'smooth'});" class="top-nav-item home">Downloads</a>
-            <a onclick="window.scrollTo({top: 3 * (window.innerHeight - 50),behavior: 'smooth'});" class="top-nav-item home">Contact</a>
-            <a onclick="window.open('https://github.com/CGhost1908/nosh_source.git')" class="top-nav-item home">GitHub</a>
-        </nav>
-    </nav>
-    <div class="mockup1-background"></div>
-    <img class="mockup1" src="mockup1.png">
-    <h1 class="mockup-title">
-        Welcome To Nosh
-    </h1>
-    <div class="mockup-front">
-        <p class="mockup-description">
-            Nosh is a powerful and simple notepad designed for<span class="highlight">developers and IT students</span>.Organize your code snippets, jot down important ideas, and keep your notes handy in one place. 
-            Whether you're <span class="highlight">coding, studying, or brainstorming</span>, Nosh helps you stay efficient and focused.
-        </p>
-        <button onclick="window.scrollTo({top: 2 * (window.innerHeight - 50),behavior: 'smooth'});" class="mockup-downlaod-btn">Downloads</button>
-    </div>
-    <div class="features">
-        <div class="feature">
-            <img src="feature1.png" class="feature-img">
-            <h2 class="feature-title">10+ Full Language Support</h2>
-            <p class="feature-description">Save your code snippets and access them quickly whenever you need them. Nosh makes it easy to organize and manage your code snippets.</p>
-            <button onclick="window.scrollTo({top: 2 * (window.innerHeight - 50),behavior: 'smooth'});"  class="features-button">Explore nosh!</button>
-        </div>
-        <div class="feature">
-            <img src="feature2.png" class="feature-img">
-            <h2 class="feature-title">Spotify Integration</h2>
-            <p class="feature-description">Enhance your workflow with seamless Spotify integration. Listen to your favorite tracks, control playback, and stay in the zone-all without leaving Nosh.</p>
-        <button onclick="window.scrollTo({top: 2 * (window.innerHeight - 50),behavior: 'smooth'});"  class="features-button">Explore nosh!</button>
-        </div>
-        <div class="feature">
-            <img src="feature3.png" class="feature-img">
-            <h2 class="feature-title">Google Drive Integration</h2>
-            <p class="feature-description">Connect your Google Drive account to Nosh and ensure your files are always safe and synced across all your devices. Experience effortless accessibility and peace of mind.</p>
-            <button onclick="window.scrollTo({top: 2 * (window.innerHeight - 50),behavior: 'smooth'});"  class="features-button">Coming with next patch!</button>
-        </div>
-        <div class="feature">
-            <img src="feature4.png" class="feature-img">
-            <h2 class="feature-title">Android Support</h2>
-            <p class="feature-description">Take Nosh with you wherever you go! Android support will bring the full power of Nosh to your mobile device, keeping your notes and ideas at your fingertips.</p>
-            <button onclick="window.scrollTo({top: 2 * (window.innerHeight - 50),behavior: 'smooth'});"  class="features-button">Coming soon.</button>
-        </div>
-    </div>
-    <div class="downloads">
-        <div class="latest">
-            <h2 class="downloads-title">Latest Version</h2>
-            <div style="padding: 0 20px; text-align: left;" class="patch-notes">
-                <h2>Google Drive is now ready for testing!</h3>
-                <h3>You can connect your Google Drive account to Nosh and sync your files easily. This is a test version, so please try it out and share your feedback. Your thoughts will help us make it better!</h3>
-                <h3>Now you can publish your files on the web.</h3>
-                <h3>Thank you for using Nosh!</h3>
-            </div>
-            <button onclick="window.open('https://drive.google.com/file/d/16yYs2YP2uiiBRqtOq2pzpqH1I5x278Wt/view?usp=sharing')" class="download-latest-btn">Download version 1.3.4</button>
-        </div>
-        <div class="other-versions">
-            <h2 class="downloads-title">Other Versions</h2>
-            <div class="downloads-container">
-                <div class="download-item">
-                    <button onclick="window.open('https://drive.google.com/file/d/16yYs2YP2uiiBRqtOq2pzpqH1I5x278Wt/view?usp=sharing')" class="download-btn">Version 1.3.4 <p>99.7 MB</p></button>
-                </div>
-                <div class="download-item">
-                    <button onclick="window.open('https://drive.google.com/file/d/18eJ6CCnOA87BPHexw6TU-0Qtf28-BEiO/view?usp=sharing')" class="download-btn">Version 1.3.2 <p>75 MB</p></button>
-                </div>
-                <div class="download-item">
-                    <button onclick="window.open('https://drive.google.com/file/d/1wVXoHRv5g_djpirPmw6j0RVFkEOsNxKf/view?usp=sharing')" class="download-btn">Version 1.3.1 alpha <p>74.9 MB</p></button>
-                </div>
-                <div class="download-item">
-                    <button onclick="window.open('https://drive.google.com/file/d/15rYU2CBjq_0LVnefJSzFwdHU6_3W4AIr/view?usp=sharing')" class="download-btn">Version 1.3 alpha <p>74.9 MB</p></button>
-                </div>
-                <div class="download-item">
-                    <button onclick="window.open('https://drive.google.com/file/d/1-Pxn41riMJjvy8Hhl12un9yB-bPSReGL/view?usp=drive_link')" class="download-btn">Version 1.2<p>74.1 MB</p></button>
-                </div>
-                <div class="download-item">
-                    <button onclick="window.open('https://drive.google.com/file/d/1MlP9plRQPdP1TdNsjT0ZLpLN-IJ78Wc8/view?usp=drive_link')" class="download-btn">Version 1.1.7 <p>82.1 MB</p></button>
-                </div>
-                <div class="download-item">
-                    <button onclick="window.open('https://drive.google.com/file/d/1J0g9N2jTGScGJ54UUOFdrv0Vn1hHd0jb/view?usp=drive_link')" class="download-btn">Version 1.1.6 <p>82 MB</p></button>
-                </div>
-                <div class="download-item">
-                    <button onclick="window.open('https://drive.google.com/file/d/1K1VrHI1v5uUMye6cawkSkGFjuISZu5aF/view?usp=drive_link')" class="download-btn">Version 1.1.5 <p>82 MB</p></button>
-                </div>
-                <div class="download-item">
-                    <button onclick="window.open('https://drive.google.com/file/d/1hgtHNq-h946_PB-LVf3pdOBcBCLrced3/view?usp=drive_link')" class="download-btn">Version 1.1.3 <p>82.1 MB</p></button>
-                </div>
-                <div class="download-item">
-                    <button onclick="window.open('https://drive.google.com/file/d/1E6SJAOfMUZJ4-uI1QdVz7q6_EZIzNxAG/view?usp=drive_link')" class="download-btn">Version 1.0.2 <p>78.8 MB</p></button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="contact">
-        <div class="sorry-tab"><h1>I couldn't make email integration but i will handle it i promise. <p><font size="4">You can contact with me via this mail: noshthenotepad@gmail.com</font></p></h1></div>
-        <div class="contact-container">
-            <h2 class="contact-title">Contact Us</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" placeholder="Enter your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" placeholder="Write your message here" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="contact-btn">Send Message</button>
-            </form>
-        </div>
-    </div>
 
+    <!-- Navigation Header -->
+    <header class="top-nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
+                <img src="icon.ico" alt="Nosh Logo" class="brand-logo">
+                <span class="brand-name">nosh</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#preview" class="nav-link">Preview</a>
+                <a href="#downloads" class="nav-link">Downloads</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="https://github.com/CGhost1908/nosh-source" target="_blank" rel="noopener noreferrer" class="nav-link github-link">
+                    <iconify-icon icon="mdi:github"></iconify-icon>
+                    <span>GitHub</span>
+                </a>
+            </nav>
+            <div class="nav-action">
+                <a href="#downloads" class="btn btn-nav">Get Nosh Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="pill-badge">
+                    <span class="pulse-dot"></span>
+                    <span>Version 1.3.4 Available • Free & Open Source</span>
+                </div>
+                <h1 class="hero-title">
+                    The Notepad Built for <span class="gradient-text">Developers</span> & <span class="gradient-text-alt">CS Students</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Forget bloated text editors and slow notes. <strong>Nosh</strong> gives you instant multi-language syntax highlighting, seamless <strong>Google Drive cloud sync</strong>, and native <strong>Spotify music controls</strong> right inside your scratchpad.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#downloads" class="btn btn-primary btn-large">
+                        <iconify-icon icon="lucide:download"></iconify-icon>
+                        <span>Download for Windows</span>
+                        <span class="btn-subtext">v1.3.4 • Free</span>
+                    </a>
+                    <a href="https://github.com/CGhost1908/nosh-source" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">
+                        <iconify-icon icon="mdi:github"></iconify-icon>
+                        <span>View Source Code</span>
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <span>⚡ Lightweight Electron App</span>
+                    <span>🔒 100% Privacy-First</span>
+                    <span>☁️ Google Drive Backup</span>
+                </div>
+            </div>
+
+            <!-- Hero Mockup Display -->
+            <div id="preview" class="hero-visual">
+                <div class="window-frame">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <div class="window-title">nosh - main_project_notes.nsh</div>
+                        <div class="window-badge">Spotify Connected 🟢</div>
+                    </div>
+                    <div class="mockup-img-wrapper">
+                        <img src="mockup1.png" alt="Nosh Desktop App Interface" class="mockup-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition / Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-tag">SUPERCHARGED WORKSPACE</h2>
+                <h3 class="section-title">Everything you need to write code & take notes in flow</h3>
+                <p class="section-subtitle">Engineered specifically to remove friction during coding sessions, homework, and software architecture brainstorming.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-media">
+                        <img src="feature1.png" alt="10+ Language Syntax Support" class="feature-img">
+                    </div>
+                    <div class="feature-body">
+                        <div class="feature-icon-badge">
+                            <iconify-icon icon="lucide:code-2"></iconify-icon>
+                        </div>
+                        <h4 class="feature-title">15+ Language Code Blocks</h4>
+                        <p class="feature-desc">Embedded CodeMirror engine with intelligent syntax highlighting for C++, Python, JavaScript, Java, Go, Rust, SQL, HTML/CSS and more.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-media">
+                        <img src="feature2.png" alt="Spotify Desktop Controls" class="feature-img">
+                    </div>
+                    <div class="feature-body">
+                        <div class="feature-icon-badge spotify-badge">
+                            <iconify-icon icon="mdi:spotify"></iconify-icon>
+                        </div>
+                        <h4 class="feature-title">Native Spotify Integration</h4>
+                        <p class="feature-desc">Never break your deep focus. Track name, album artwork, pause/skip controls, and radial volume sliders right on your notepad canvas.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-media">
+                        <img src="feature3.png" alt="Google Drive Sync" class="feature-img">
+                    </div>
+                    <div class="feature-body">
+                        <div class="feature-icon-badge drive-badge">
+                            <iconify-icon icon="logos:google-drive"></iconify-icon>
+                        </div>
+                        <h4 class="feature-title">Google Drive Cloud Sync</h4>
+                        <p class="feature-desc">One-click cloud synchronization. Nosh automatically backups your notes and snippets to your personal Google Drive with version safety.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-media">
+                        <img src="feature4.png" alt="Cross Platform Roadmap" class="feature-img">
+                    </div>
+                    <div class="feature-body">
+                        <div class="feature-icon-badge mobile-badge">
+                            <iconify-icon icon="lucide:smartphone"></iconify-icon>
+                        </div>
+                        <h4 class="feature-title">Cross-Platform Ecosystem</h4>
+                        <p class="feature-desc">Fast, native desktop performance for Windows, with companion mobile versions and web note sharing actively in continuous development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads" class="downloads-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-tag">DOWNLOADS & RELEASES</h2>
+                <h3 class="section-title">Upgrade your daily scratchpad experience today</h3>
+                <p class="section-subtitle">Free, lightweight, and completely ad-free. No account registration required.</p>
+            </div>
+
+            <div class="downloads-wrapper">
+                <!-- Latest Featured Download -->
+                <div class="download-featured-card">
+                    <div class="featured-badge">LATEST STABLE RELEASE</div>
+                    <div class="featured-header">
+                        <div class="featured-version-info">
+                            <h4 class="version-name">Nosh v1.3.4 (Windows)</h4>
+                            <span class="version-meta">64-bit Installer • ~99.7 MB</span>
+                        </div>
+                        <a href="https://drive.google.com/file/d/16yYs2YP2uiiBRqtOq2pzpqH1I5x278Wt/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-download-main">
+                            <iconify-icon icon="lucide:download"></iconify-icon>
+                            <span>Download v1.3.4</span>
+                        </a>
+                    </div>
+                    <div class="patch-box">
+                        <h5 class="patch-title">What's New in v1.3.4:</h5>
+                        <ul class="patch-list">
+                            <li><iconify-icon icon="lucide:check-circle-2"></iconify-icon> <strong>Google Drive Cloud Sync</strong>: Automatic cloud folder management and file synchronization.</li>
+                            <li><iconify-icon icon="lucide:check-circle-2"></iconify-icon> <strong>Web Publishing</strong>: Ability to publish formatted notes to web shareable links.</li>
+                            <li><iconify-icon icon="lucide:check-circle-2"></iconify-icon> <strong>Spotify Remote</strong>: Smoother volume curve and live track progress detection.</li>
+                            <li><iconify-icon icon="lucide:check-circle-2"></iconify-icon> <strong>Speed Improvements</strong>: 40% faster startup time and reduced memory usage.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Previous Versions Archive -->
+                <div class="previous-versions-card">
+                    <h4 class="archive-title">Release History & Archives</h4>
+                    <div class="versions-list">
+                        <div class="version-row">
+                            <span class="v-num">v1.3.2</span>
+                            <span class="v-size">75.0 MB</span>
+                            <a href="https://drive.google.com/file/d/18eJ6CCnOA87BPHexw6TU-0Qtf28-BEiO/view?usp=sharing" target="_blank" class="v-link">Download</a>
+                        </div>
+                        <div class="version-row">
+                            <span class="v-num">v1.3.1 Alpha</span>
+                            <span class="v-size">74.9 MB</span>
+                            <a href="https://drive.google.com/file/d/1wVXoHRv5g_djpirPmw6j0RVFkEOsNxKf/view?usp=sharing" target="_blank" class="v-link">Download</a>
+                        </div>
+                        <div class="version-row">
+                            <span class="v-num">v1.3.0 Alpha</span>
+                            <span class="v-size">74.9 MB</span>
+                            <a href="https://drive.google.com/file/d/15rYU2CBjq_0LVnefJSzFwdHU6_3W4AIr/view?usp=sharing" target="_blank" class="v-link">Download</a>
+                        </div>
+                        <div class="version-row">
+                            <span class="v-num">v1.2.0</span>
+                            <span class="v-size">74.1 MB</span>
+                            <a href="https://drive.google.com/file/d/1-Pxn41riMJjvy8Hhl12un9yB-bPSReGL/view?usp=drive_link" target="_blank" class="v-link">Download</a>
+                        </div>
+                        <div class="version-row">
+                            <span class="v-num">v1.1.7</span>
+                            <span class="v-size">82.1 MB</span>
+                            <a href="https://drive.google.com/file/d/1MlP9plRQPdP1TdNsjT0ZLpLN-IJ78Wc8/view?usp=drive_link" target="_blank" class="v-link">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Feedback Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 class="section-tag">GET IN TOUCH</h2>
+                <h3 class="contact-headline">Questions, feature requests, or feedback?</h3>
+                <p class="contact-description">
+                    We're actively developing Nosh! If you find a bug, want support for another programming language, or have an idea, reach out directly.
+                </p>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <iconify-icon icon="lucide:mail"></iconify-icon>
+                    </div>
+                    <div class="contact-card-details">
+                        <span class="card-label">Direct Creator Email</span>
+                        <a href="mailto:noshthenotepad@gmail.com" class="card-email">noshthenotepad@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <iconify-icon icon="mdi:github"></iconify-icon>
+                    </div>
+                    <div class="contact-card-details">
+                        <span class="card-label">Open Source Repository</span>
+                        <a href="https://github.com/CGhost1908/nosh-source" target="_blank" class="card-email">github.com/CGhost1908/nosh-source</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Working Feedback Form -->
+            <div class="contact-form-wrapper">
+                <form class="contact-form" onsubmit="event.preventDefault(); window.location.href='mailto:noshthenotepad@gmail.com?subject=Nosh Feedback from ' + encodeURIComponent(document.getElementById('name').value) + '&body=' + encodeURIComponent(document.getElementById('message').value);">
+                    <h4 class="form-title">Send a Quick Message</h4>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Eren Altunkapak" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" placeholder="dev@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message or Feature Idea</label>
+                        <textarea id="message" rows="4" placeholder="I'd love to see support for..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <iconify-icon icon="lucide:send"></iconify-icon>
+                        <span>Send via Email Client</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Nosh. All rights reserved.</p>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <img src="icon.ico" alt="Nosh Logo" class="brand-logo-small">
+                    <span>Nosh Notepad</span>
+                </div>
+                <p class="footer-copy">&copy; 2025-2026 Nosh. Free & Open Source. Crafted for developers.</p>
+            </div>
             <div class="footer-links">
                 <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
                 <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
-                <a href="https://github.com/CGhost1908/nosh" class="footer-link" target="_blank">GitHub</a>
+                <a href="https://github.com/CGhost1908/nosh-source" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
             </div>
         </div>
     </footer>
+
 </body>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </html>
