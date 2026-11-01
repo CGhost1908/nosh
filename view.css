@@ -127,18 +127,33 @@ body {
     border-color: var(--border-medium);
 }
 
-.nav-github-link {
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    padding: 5px;
+.top-nav-button {
+    background: #4f46e5;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
     border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.15s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.38);
 }
-.nav-github-link:hover {
-    color: var(--text-primary);
+.top-nav-button:hover {
+    background: #4338ca;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.55);
+    transform: translateY(-1px);
+}
+.top-nav-button:active {
+    transform: translateY(0);
+}
+.top-nav-button iconify-icon {
+    font-size: 15px;
 }
 
 /* --- Document Reader Container (Flat, Seamless) --- */
