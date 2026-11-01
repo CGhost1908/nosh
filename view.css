@@ -65,6 +65,7 @@ body {
 }
 
 .nav-container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -79,6 +80,7 @@ body {
     align-items: center;
     gap: 0.75rem;
     min-width: 0;
+    max-width: calc(50% - 240px);
 }
 
 .nav-brand {
@@ -121,6 +123,9 @@ body {
 }
 
 .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -171,11 +176,13 @@ body {
     text-align: center;
     font-family: var(--font-sans);
     text-decoration: none;
+    line-height: 1.6;
 }
 
 .btn-sm {
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
+    line-height: 1.6;
 }
 
 .btn-nav-secondary {
@@ -209,6 +216,9 @@ body {
     }
     .nav-container {
         padding: 0 1rem;
+    }
+    .nav-brand-group {
+        max-width: calc(100% - 130px);
     }
     .nav-doc-title {
         max-width: 140px;

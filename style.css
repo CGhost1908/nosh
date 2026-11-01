@@ -96,6 +96,7 @@ a {
 }
 
 .nav-container {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -125,6 +126,9 @@ a {
 }
 
 .nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -164,11 +168,13 @@ a {
     border: none;
     transition: var(--transition);
     text-align: center;
+    line-height: 1.6;
 }
 
 .btn-sm {
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
+    line-height: 1.6;
 }
 
 .btn-nav-cta {

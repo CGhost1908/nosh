@@ -10,10 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="view.css?v=2.3">
+    <link rel="stylesheet" href="view.css?v=2.4">
     
     <style>
         /* Fail-safe inline styles to prevent browser cache mismatch */
+        html {
+            font-size: 16px;
+        }
         .top-nav {
             position: fixed;
             top: 0;
@@ -27,6 +30,7 @@
             z-index: 1000;
         }
         .nav-container {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -40,6 +44,7 @@
             align-items: center;
             gap: 0.75rem;
             min-width: 0;
+            max-width: calc(50% - 240px);
         }
         .nav-brand {
             display: flex;
@@ -73,9 +78,11 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 260px;
         }
         .nav-links {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             align-items: center;
             gap: 2rem;
@@ -110,8 +117,8 @@
             align-items: center;
             justify-content: center;
             gap: 0.55rem;
-            padding: 0.5rem 1rem;
-            font-size: 0.85rem;
+            padding: 0.7rem 1.35rem;
+            font-size: 0.92rem;
             font-weight: 600;
             border-radius: 6px;
             cursor: pointer;
@@ -120,21 +127,18 @@
             text-align: center;
             font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
             text-decoration: none;
+            line-height: 1.6;
         }
-        .btn-nav-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: #f8fafc;
-            border: 1px solid rgba(255, 255, 255, 0.07);
-        }
-        .btn-nav-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.16);
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            line-height: 1.6;
         }
         .btn-nav-cta {
             background: rgba(255, 255, 255, 0.08);
             color: #f8fafc;
             border: 1px solid rgba(255, 255, 255, 0.07);
+            box-sizing: border-box;
         }
         .btn-nav-cta:hover {
             background: #4f46e5;
@@ -149,8 +153,8 @@
             .nav-container {
                 padding: 0 1rem;
             }
-            .nav-doc-title {
-                max-width: 140px;
+            .nav-brand-group {
+                max-width: calc(100% - 130px);
             }
         }
     </style>
