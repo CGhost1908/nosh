@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosh Web Viewer</title>
     <link rel="icon" href="icon.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="view.css">
     
     <!-- CodeMirror & Dracula Theme -->
@@ -27,25 +32,38 @@
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 <body>
-    <!-- Top Navigation Bar -->
+    <!-- Header Navigation (Synchronized with Nosh Website) -->
     <header class="top-nav">
-        <div class="nav-left">
-            <a href="https://cghost1908.github.io/nosh" class="brand-link" title="Nosh">
-                <img src="icon.ico" class="brand-logo" alt="Nosh">
-                <span class="brand-name">nosh</span>
-            </a>
-            <span class="nav-sep">/</span>
-            <span class="nav-title" id="nav-title">Loading note...</span>
-        </div>
-        <div class="nav-right">
-            <button class="nav-action-btn" onclick="copyShareUrl()" title="Copy link to clipboard">
-                <iconify-icon icon="solar:copy-linear"></iconify-icon>
-                <span>Copy Link</span>
-            </button>
-            <a href="https://cghost1908.github.io/nosh" target="_blank" rel="noopener noreferrer" class="top-nav-button" title="Get Nosh App">
-                <iconify-icon icon="solar:download-square-linear"></iconify-icon>
-                <span>Get Nosh App</span>
-            </a>
+        <div class="nav-container">
+            <div class="nav-brand-group">
+                <a href="https://cghost1908.github.io/nosh" class="nav-brand" title="Nosh Home">
+                    <img src="icon.ico" alt="Nosh Logo" class="brand-logo">
+                    <span class="brand-name">nosh</span>
+                </a>
+                <span class="nav-doc-sep">/</span>
+                <span class="nav-doc-title" id="nav-title">Loading note...</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="https://cghost1908.github.io/nosh#features" class="nav-link">Features</a>
+                <a href="https://cghost1908.github.io/nosh#downloads" class="nav-link">Downloads</a>
+                <a href="https://cghost1908.github.io/nosh#changelog" class="nav-link">Changelog</a>
+                <a href="https://github.com/CGhost1908/nosh-source" target="_blank" rel="noopener noreferrer" class="nav-link github-nav-link">
+                    <iconify-icon icon="mdi:github"></iconify-icon>
+                    <span>GitHub</span>
+                </a>
+            </nav>
+
+            <div class="nav-action">
+                <button class="btn btn-sm btn-nav-secondary" onclick="copyShareUrl()" title="Copy link to clipboard">
+                    <iconify-icon icon="solar:copy-linear"></iconify-icon>
+                    <span>Copy Link</span>
+                </button>
+                <a href="https://cghost1908.github.io/nosh#downloads" class="btn btn-sm btn-nav-cta">
+                    <iconify-icon icon="lucide:download"></iconify-icon>
+                    <span>Get Nosh</span>
+                </a>
+            </div>
         </div>
     </header>
 
