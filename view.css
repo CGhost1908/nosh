@@ -348,11 +348,15 @@ body {
 
 /* --- Clean Code Blocks & CodeMirror --- */
 .code-block-wrapper {
-    margin: 18px 0;
+    margin: 14px 0;
     border: 1px solid var(--border-medium);
     border-radius: var(--radius-md);
     overflow: hidden;
     background: var(--bg-code);
+}
+
+.code-block-wrapper + .code-block-wrapper {
+    margin-top: 12px;
 }
 
 .code-block-header {
@@ -379,6 +383,10 @@ body {
     text-transform: lowercase;
 }
 
+.code-lang-tag .lang-caret {
+    display: none !important;
+}
+
 .code-block-actions {
     display: flex;
     align-items: center;
@@ -403,6 +411,9 @@ body {
     color: var(--text-primary);
     background: rgba(255, 255, 255, 0.08);
 }
+.code-action-btn.delete {
+    display: none !important;
+}
 
 .CodeMirror {
     font-family: var(--font-code) !important;
@@ -410,13 +421,16 @@ body {
     line-height: 1.65 !important;
     height: auto !important;
     background: var(--bg-code) !important;
-    padding: 8px 0;
+    padding: 4px 0 !important;
 }
 .CodeMirror-scroll {
     height: auto !important;
-    min-height: 40px;
+    min-height: 0 !important;
     overflow-y: hidden !important;
     overflow-x: auto !important;
+}
+.CodeMirror-lines {
+    padding: 2px 0 4px 0 !important;
 }
 .CodeMirror-gutters {
     background: #0d1017 !important;

@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="view.css?v=2.4">
+    <link rel="stylesheet" href="view.css?v=2.5">
     
     <style>
         /* Fail-safe inline styles to prevent browser cache mismatch */
@@ -145,6 +145,36 @@
             border-color: #4f46e5;
             box-shadow: 0 0 16px rgba(99, 102, 241, 0.28);
             color: #ffffff;
+        }
+        /* Clean Code Blocks & CodeMirror padding refinement */
+        .CodeMirror {
+            font-family: var(--font-code) !important;
+            font-size: 13px !important;
+            line-height: 1.65 !important;
+            height: auto !important;
+            background: var(--bg-code) !important;
+            padding: 4px 0 !important;
+        }
+        .CodeMirror-scroll {
+            height: auto !important;
+            min-height: 0 !important;
+            overflow-y: hidden !important;
+            overflow-x: auto !important;
+        }
+        .CodeMirror-lines {
+            padding: 2px 0 4px 0 !important;
+        }
+        .code-block-wrapper {
+            margin: 14px 0;
+        }
+        .code-block-wrapper + .code-block-wrapper {
+            margin-top: 12px;
+        }
+        .code-action-btn.delete {
+            display: none !important;
+        }
+        .code-lang-tag .lang-caret {
+            display: none !important;
         }
         @media (max-width: 860px) {
             .nav-links {
