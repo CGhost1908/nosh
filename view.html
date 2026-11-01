@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosh Web Viewer</title>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="view.css">
+    
+    <!-- CodeMirror & Themes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/theme/dracula.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/rust/rust.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/css/css.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+    <style>
+        .loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            color: var(--text-muted);
+            gap: 16px;
+        }
+        .spinner {
+            width: 36px;
+            height: 36px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .error-card {
+            background: #181c26;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 32px 24px;
+            text-align: center;
+            max-width: 480px;
+            margin: 40px auto;
+        }
+        .error-card h2 {
+            color: #ef4444;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .error-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .meta-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 6px 0;
+        }
+        .checklist-item input[type="checkbox"] {
+            accent-color: var(--accent);
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+        }
+        .checklist-item.completed span {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .copy-link-btn {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-primary);
+            border: 1px solid var(--border-subtle);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: 0.15s ease;
+        }
+        .copy-link-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .toast-msg {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #181c26;
+            border: 1px solid var(--accent);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: none;
+            z-index: 2000;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <header class="top-nav">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="icon.ico" class="top-nav-logo" alt="Nosh" onclick="window.location.href='https://github.com/CGhost1908/nosh'">
+            <span class="page-title" id="nav-title">Nosh Note</span>
+        </div>
+        <div class="nav-actions">
+            <button class="copy-link-btn" onclick="copyShareUrl()" title="Copy Link to Clipboard">
+                <iconify-icon icon="solar:copy-linear"></iconify-icon>
+                <span>Copy Link</span>
+            </button>
+            <a href="https://github.com/CGhost1908/nosh" target="_blank" class="top-nav-button">Get Nosh App</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="content">
+        <div class="loading-container" id="loading-state">
+            <div class="spinner"></div>
+            <div>Loading note from Supabase Cloud...</div>
+        </div>
+
+        <div class="error-card" id="error-state" style="display: none;">
+            <iconify-icon icon="solar:danger-triangle-linear" style="font-size: 36px; color: #ef4444; margin-bottom: 8px;"></iconify-icon>
+            <h2 id="error-title">Note Not Found</h2>
+            <p id="error-desc">The requested note does not exist or may have been removed.</p>
+            <a href="https://github.com/CGhost1908/nosh" class="top-nav-button">Visit Nosh on GitHub</a>
+        </div>
+
+        <article id="note-article" style="display: none;">
+            <div class="meta-bar">
+                <span id="doc-date">Published via Nosh</span>
+                <span>·</span>
+                <span id="doc-views">Shared Document</span>
+            </div>
+            <div id="note-body"></div>
+        </article>
+    </main>
+
+    <div class="toast-msg" id="toast">Link copied to clipboard!</div>
+
+    <script>
+        // Supabase Cloud Configuration
+        const SUPABASE_URL = 'https://buvtdaxlibejpjlkxaor.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ1dnRkYXhsaWJlanBqbGt4YW9yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM1MjA2NTIsImV4cCI6MjEwOTA5NjY1Mn0.Kd2bR8gAm2lLGKHLhV1CJCacuLE1NKPptVmIJiKZnNY';
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.textContent = msg;
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 2500);
+        }
+
+        function copyShareUrl() {
+            navigator.clipboard.writeText(window.location.href)
+                .then(() => showToast('Share link copied to clipboard!'))
+                .catch(() => alert('Failed to copy link.'));
+        }
+
+        async function fetchPublishedNote() {
+            const params = new URLSearchParams(window.location.search);
+            const noteId = params.get('id');
+
+            const loadingEl = document.getElementById('loading-state');
+            const errorEl = document.getElementById('error-state');
+            const articleEl = document.getElementById('note-article');
+            const navTitle = document.getElementById('nav-title');
+            const noteBody = document.getElementById('note-body');
+            const docDate = document.getElementById('doc-date');
+
+            if (!noteId) {
+                loadingEl.style.display = 'none';
+                errorEl.style.display = 'block';
+                document.getElementById('error-title').textContent = 'No Note ID Provided';
+                document.getElementById('error-desc').textContent = 'Please check the URL parameter ?id=...';
+                return;
+            }
+
+            try {
+                const endpoint = `${SUPABASE_URL}/rest/v1/shared_notes?id=eq.${encodeURIComponent(noteId)}&select=*`;
+                const response = await fetch(endpoint, {
+                    method: 'GET',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: Failed to load note`);
+                }
+
+                const data = await response.json();
+                if (!data || data.length === 0) {
+                    loadingEl.style.display = 'none';
+                    errorEl.style.display = 'block';
+                    return;
+                }
+
+                const note = data[0];
+                document.title = `${note.title || 'Note'} - Nosh Web`;
+                if (navTitle) navTitle.textContent = note.title || 'Untitled Note';
+
+                if (docDate && note.created_at) {
+                    const d = new Date(note.created_at);
+                    docDate.textContent = `Published on ${d.toLocaleDateString()} at ${d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+                }
+
+                if (noteBody) {
+                    noteBody.innerHTML = note.content;
+                    initInteractiveElements(noteBody);
+                }
+
+                loadingEl.style.display = 'none';
+                articleEl.style.display = 'block';
+
+            } catch (err) {
+                console.error('Error fetching note:', err);
+                loadingEl.style.display = 'none';
+                errorEl.style.display = 'block';
+                document.getElementById('error-title').textContent = 'Connection Error';
+                document.getElementById('error-desc').textContent = err.message || 'Unable to connect to Supabase Cloud.';
+            }
+        }
+
+        function initInteractiveElements(container) {
+            // 1. Initialize CodeMirror for Code Blocks
+            const codeBlocks = container.querySelectorAll('.code-block-wrapper');
+            codeBlocks.forEach(wrapper => {
+                const ta = wrapper.querySelector('textarea.code');
+                const langNameEl = wrapper.querySelector('.lang-name');
+                const rawLang = ta ? (ta.getAttribute('language') || 'javascript') : 'javascript';
+
+                let mode = 'javascript';
+                const lower = rawLang.toLowerCase();
+                if (lower.includes('py')) mode = 'python';
+                else if (lower.includes('rust')) mode = 'rust';
+                else if (lower.includes('c') || lower.includes('java')) mode = 'text/x-csrc';
+                else if (lower.includes('html') || lower.includes('xml')) mode = 'xml';
+                else if (lower.includes('css')) mode = 'css';
+
+                if (ta && window.CodeMirror) {
+                    const cm = CodeMirror.fromTextArea(ta, {
+                        mode: mode,
+                        theme: 'dracula',
+                        readOnly: true,
+                        lineNumbers: true,
+                        lineWrapping: true
+                    });
+                }
+
+                // Attach Copy Code Button
+                const copyBtn = wrapper.querySelector('.copy-btn');
+                if (copyBtn) {
+                    copyBtn.onclick = () => {
+                        const code = wrapper.querySelector('.CodeMirror')?.CodeMirror?.getValue() || ta?.value || '';
+                        navigator.clipboard.writeText(code).then(() => {
+                            copyBtn.textContent = 'Copied!';
+                            setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1500);
+                        });
+                    };
+                }
+            });
+
+            // 2. Interactive Checklist Checkboxes
+            const checkboxes = container.querySelectorAll('.checklist-checkbox');
+            checkboxes.forEach(cb => {
+                cb.onchange = () => {
+                    const item = cb.closest('.checklist-item');
+                    if (item) {
+                        item.classList.toggle('completed', cb.checked);
+                    }
+                };
+            });
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', fetchPublishedNote);
+    </script>
+</body>
+</html>
