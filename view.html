@@ -7,7 +7,7 @@
     <link rel="icon" href="icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="view.css">
     
-    <!-- CodeMirror & Themes -->
+    <!-- CodeMirror & Dracula Theme -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/theme/dracula.min.css">
     
@@ -16,128 +16,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/python/python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/rust/rust.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/go/go.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/swift/swift.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/sql/sql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/shell/shell.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/xml/xml.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/yaml/yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/markdown/markdown.min.js"></script>
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-
-    <style>
-        .loading-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 20px;
-            color: var(--text-muted);
-            gap: 16px;
-        }
-        .spinner {
-            width: 36px;
-            height: 36px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-top-color: var(--accent);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        .error-card {
-            background: #181c26;
-            border: 1px solid rgba(239, 68, 68, 0.3);
-            border-radius: 12px;
-            padding: 32px 24px;
-            text-align: center;
-            max-width: 480px;
-            margin: 40px auto;
-        }
-        .error-card h2 {
-            color: #ef4444;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-        .error-card p {
-            color: var(--text-secondary);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        .meta-bar {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            padding-bottom: 14px;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-        .checklist-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin: 6px 0;
-        }
-        .checklist-item input[type="checkbox"] {
-            accent-color: var(--accent);
-            cursor: pointer;
-            width: 16px;
-            height: 16px;
-        }
-        .checklist-item.completed span {
-            text-decoration: line-through;
-            opacity: 0.6;
-        }
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .copy-link-btn {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--text-primary);
-            border: 1px solid var(--border-subtle);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            cursor: pointer;
-            transition: 0.15s ease;
-        }
-        .copy-link-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-        .toast-msg {
-            position: fixed;
-            bottom: 24px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #181c26;
-            border: 1px solid var(--accent);
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 13px;
-            display: none;
-            z-index: 2000;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-        }
-    </style>
 </head>
 <body>
-    <!-- Top Navigation -->
+    <!-- Top Navigation Bar -->
     <header class="top-nav">
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <img src="icon.ico" class="top-nav-logo" alt="Nosh" onclick="window.location.href='https://github.com/CGhost1908/nosh'">
-            <span class="page-title" id="nav-title">Nosh Note</span>
+        <div class="nav-left">
+            <img src="icon.ico" class="top-nav-logo" alt="Nosh" onclick="window.location.href='https://github.com/CGhost1908/nosh'" title="Nosh">
+            <span class="brand-badge">NOSH</span>
+            <span class="nav-divider">/</span>
+            <span class="page-title" id="nav-title">Loading note...</span>
         </div>
         <div class="nav-actions">
             <button class="copy-link-btn" onclick="copyShareUrl()" title="Copy Link to Clipboard">
                 <iconify-icon icon="solar:copy-linear"></iconify-icon>
                 <span>Copy Link</span>
             </button>
-            <a href="https://github.com/CGhost1908/nosh" target="_blank" class="top-nav-button">Get Nosh App</a>
+            <a href="https://github.com/CGhost1908/nosh" target="_blank" rel="noopener noreferrer" class="top-nav-button">
+                <iconify-icon icon="solar:download-square-linear"></iconify-icon>
+                <span>Get Nosh App</span>
+            </a>
         </div>
     </header>
 
@@ -149,17 +55,17 @@
         </div>
 
         <div class="error-card" id="error-state" style="display: none;">
-            <iconify-icon icon="solar:danger-triangle-linear" style="font-size: 36px; color: #ef4444; margin-bottom: 8px;"></iconify-icon>
+            <iconify-icon icon="solar:danger-triangle-linear" style="font-size: 40px; color: #ef4444; margin-bottom: 8px;"></iconify-icon>
             <h2 id="error-title">Note Not Found</h2>
             <p id="error-desc">The requested note does not exist or may have been removed.</p>
             <a href="https://github.com/CGhost1908/nosh" class="top-nav-button">Visit Nosh on GitHub</a>
         </div>
 
-        <article id="note-article" style="display: none;">
+        <article id="note-article" class="reader-card" style="display: none;">
             <div class="meta-bar">
-                <span id="doc-date">Published via Nosh</span>
+                <span class="meta-badge" id="doc-date">Published via Nosh</span>
                 <span>·</span>
-                <span id="doc-views">Shared Document</span>
+                <span id="doc-views">Public Document</span>
             </div>
             <div id="note-body"></div>
         </article>
@@ -177,13 +83,101 @@
             if (!toast) return;
             toast.textContent = msg;
             toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 2500);
+            setTimeout(() => { toast.style.display = 'none'; }, 2200);
         }
 
         function copyShareUrl() {
             navigator.clipboard.writeText(window.location.href)
                 .then(() => showToast('Share link copied to clipboard!'))
                 .catch(() => alert('Failed to copy link.'));
+        }
+
+        function mapLanguageMode(raw) {
+            if (!raw) return 'javascript';
+            const lower = raw.toLowerCase().trim();
+            if (lower.includes('py')) return 'python';
+            if (lower.includes('rust')) return 'rust';
+            if (lower.includes('go')) return 'go';
+            if (lower.includes('swift')) return 'swift';
+            if (lower.includes('c++') || lower.includes('cpp')) return 'text/x-c++src';
+            if (lower === 'c' || lower.includes('x-csrc')) return 'text/x-csrc';
+            if (lower.includes('java')) return 'text/x-java';
+            if (lower.includes('sql')) return 'sql';
+            if (lower.includes('sh') || lower.includes('bash')) return 'shell';
+            if (lower.includes('html') || lower.includes('xml')) return 'xml';
+            if (lower.includes('css')) return 'css';
+            if (lower.includes('json')) return 'javascript';
+            if (lower.includes('yaml') || lower.includes('yml')) return 'yaml';
+            if (lower.includes('markdown') || lower.includes('md')) return 'markdown';
+            if (lower.includes('ts') || lower.includes('typescript')) return 'javascript';
+            return 'javascript';
+        }
+
+        function upgradeLegacyBlocksInDOM(container) {
+            // Find all legacy .code-block-layer elements
+            const legacyLayers = container.querySelectorAll('.code-block-layer');
+            legacyLayers.forEach(layer => {
+                const parent = layer.parentElement;
+                const ta = parent ? parent.querySelector('textarea.code') : null;
+                if (!ta) return;
+
+                const langP = layer.querySelector('p');
+                const rawLang = (langP ? langP.textContent.trim() : '') || ta.getAttribute('language') || 'javascript';
+
+                let code = ta.value || '';
+                if (!code) {
+                    const deadCM = parent.querySelector('.CodeMirror');
+                    if (deadCM) {
+                        const lines = deadCM.querySelectorAll('.CodeMirror-line');
+                        if (lines && lines.length > 0) {
+                            code = Array.from(lines).map(l => l.textContent).join('\n');
+                        }
+                    }
+                }
+                if (!code) code = ta.textContent || '';
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'code-block-wrapper';
+
+                const header = document.createElement('div');
+                header.className = 'code-block-header';
+                header.innerHTML = `
+                    <div class="code-header-left">
+                        <div class="code-window-dots">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                        </div>
+                        <span class="code-lang-tag">
+                            <iconify-icon icon="solar:code-square-linear"></iconify-icon>
+                            <span class="lang-name">${rawLang}</span>
+                        </span>
+                    </div>
+                    <div class="code-block-actions">
+                        <button class="code-action-btn wrap-btn" title="Toggle Line Wrap">Wrap</button>
+                        <button class="code-action-btn copy-btn" title="Copy Code">Copy</button>
+                    </div>
+                `;
+
+                const newTa = document.createElement('textarea');
+                newTa.className = 'code';
+                newTa.setAttribute('language', rawLang);
+                newTa.value = code;
+                newTa.textContent = code;
+
+                wrapper.appendChild(header);
+                wrapper.appendChild(newTa);
+
+                if (parent === container) {
+                    layer.remove();
+                    ta.replaceWith(wrapper);
+                } else {
+                    parent.replaceWith(wrapper);
+                }
+            });
+
+            // Clean any dead static .CodeMirror divs restored from HTML
+            container.querySelectorAll('.code-block-wrapper .CodeMirror').forEach(el => el.remove());
         }
 
         async function fetchPublishedNote() {
@@ -200,40 +194,39 @@
             if (!noteId) {
                 loadingEl.style.display = 'none';
                 errorEl.style.display = 'block';
-                document.getElementById('error-title').textContent = 'No Note ID Provided';
-                document.getElementById('error-desc').textContent = 'Please check the URL parameter ?id=...';
+                document.getElementById('error-title').textContent = 'No Note Specified';
+                document.getElementById('error-desc').textContent = 'Please provide a valid document link with a note ID.';
                 return;
             }
 
             try {
-                const endpoint = `${SUPABASE_URL}/rest/v1/shared_notes?id=eq.${encodeURIComponent(noteId)}&select=*`;
-                const response = await fetch(endpoint, {
-                    method: 'GET',
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/shared_notes?id=eq.${encodeURIComponent(noteId)}&select=*`, {
                     headers: {
                         'apikey': SUPABASE_ANON_KEY,
-                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-                        'Accept': 'application/json'
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
                     }
                 });
 
                 if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: Failed to load note`);
+                    throw new Error(`Failed to fetch note (HTTP ${response.status})`);
                 }
 
                 const data = await response.json();
                 if (!data || data.length === 0) {
                     loadingEl.style.display = 'none';
                     errorEl.style.display = 'block';
+                    document.getElementById('error-title').textContent = 'Note Not Found';
+                    document.getElementById('error-desc').textContent = 'The note you are looking for does not exist or has expired.';
                     return;
                 }
 
                 const note = data[0];
-                document.title = `${note.title || 'Note'} - Nosh Web`;
+                document.title = `${note.title || 'Note'} - Nosh Web Viewer`;
                 if (navTitle) navTitle.textContent = note.title || 'Untitled Note';
 
                 if (docDate && note.created_at) {
                     const d = new Date(note.created_at);
-                    docDate.textContent = `Published on ${d.toLocaleDateString()} at ${d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+                    docDate.textContent = `Published on ${d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })} at ${d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
                 }
 
                 if (noteBody) {
@@ -254,45 +247,58 @@
         }
 
         function initInteractiveElements(container) {
-            // 1. Initialize CodeMirror for Code Blocks
+            // 1. Upgrade any legacy code blocks in the HTML
+            upgradeLegacyBlocksInDOM(container);
+
+            // 2. Initialize CodeMirror on all .code-block-wrapper textareas
             const codeBlocks = container.querySelectorAll('.code-block-wrapper');
             codeBlocks.forEach(wrapper => {
                 const ta = wrapper.querySelector('textarea.code');
-                const langNameEl = wrapper.querySelector('.lang-name');
-                const rawLang = ta ? (ta.getAttribute('language') || 'javascript') : 'javascript';
+                if (!ta) return;
 
-                let mode = 'javascript';
-                const lower = rawLang.toLowerCase();
-                if (lower.includes('py')) mode = 'python';
-                else if (lower.includes('rust')) mode = 'rust';
-                else if (lower.includes('c') || lower.includes('java')) mode = 'text/x-csrc';
-                else if (lower.includes('html') || lower.includes('xml')) mode = 'xml';
-                else if (lower.includes('css')) mode = 'css';
+                const rawLang = ta.getAttribute('language') || 'javascript';
+                const mode = mapLanguageMode(rawLang);
 
-                if (ta && window.CodeMirror) {
-                    const cm = CodeMirror.fromTextArea(ta, {
+                let cm = null;
+                if (window.CodeMirror) {
+                    cm = CodeMirror.fromTextArea(ta, {
                         mode: mode,
                         theme: 'dracula',
                         readOnly: true,
                         lineNumbers: true,
-                        lineWrapping: true
+                        lineWrapping: true,
+                        tabSize: 4
                     });
                 }
 
-                // Attach Copy Code Button
+                // Line Wrapping toggle
+                const wrapBtn = wrapper.querySelector('.wrap-btn');
+                if (wrapBtn && cm) {
+                    wrapBtn.onclick = () => {
+                        const cur = cm.getOption('lineWrapping');
+                        cm.setOption('lineWrapping', !cur);
+                        wrapBtn.classList.toggle('active', !cur);
+                    };
+                }
+
+                // Copy Code action
                 const copyBtn = wrapper.querySelector('.copy-btn');
                 if (copyBtn) {
                     copyBtn.onclick = () => {
-                        const code = wrapper.querySelector('.CodeMirror')?.CodeMirror?.getValue() || ta?.value || '';
+                        const code = cm ? cm.getValue() : (ta.value || ta.textContent || '');
                         navigator.clipboard.writeText(code).then(() => {
-                            copyBtn.textContent = 'Copied!';
-                            setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1500);
+                            const origHTML = copyBtn.innerHTML;
+                            copyBtn.innerHTML = `<iconify-icon icon="solar:check-circle-bold" style="color:#10b981"></iconify-icon> Copied!`;
+                            setTimeout(() => { copyBtn.innerHTML = origHTML; }, 1800);
+                            showToast('Code copied to clipboard');
+                        }).catch(e => {
+                            console.error('Copy failed:', e);
                         });
                     };
                 }
             });
 
-            // 2. Interactive Checklist Checkboxes
+            // 3. Interactive Checklist Checkboxes
             const checkboxes = container.querySelectorAll('.checklist-checkbox');
             checkboxes.forEach(cb => {
                 cb.onchange = () => {
@@ -304,7 +310,6 @@
             });
         }
 
-        // Initialize on page load
         window.addEventListener('DOMContentLoaded', fetchPublishedNote);
     </script>
 </body>
