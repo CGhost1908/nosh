@@ -337,6 +337,11 @@ body {
 }
 
 /* --- Media Handling --- */
+.doc-body .media-container {
+    max-width: 100%;
+    margin: 16px 0;
+    display: block;
+}
 .doc-body img, .doc-body video {
     max-width: 100%;
     height: auto;
@@ -344,6 +349,37 @@ body {
     border: 1px solid var(--border-subtle);
     margin: 16px 0;
     display: block;
+}
+.doc-body .media-container img,
+.doc-body .media-container video {
+    width: 100%;
+    margin: 0;
+}
+
+/* --- Mathematical Formulas (KaTeX) --- */
+.doc-body .math-formula-block {
+    margin: 16px 0;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    text-align: center;
+    overflow-x: auto;
+}
+.doc-body .math-formula-block .katex-display {
+    margin: 0 !important;
+}
+.doc-body .math-formula-block .katex {
+    font-size: 1.18em;
+    color: var(--text-primary);
+}
+.doc-body .math-formula-inline {
+    display: inline-block;
+    padding: 1px 5px;
+    margin: 0 2px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.035);
+    vertical-align: middle;
 }
 
 /* --- Clean Code Blocks & CodeMirror --- */
@@ -441,15 +477,101 @@ body {
     padding: 0 8px !important;
 }
 
-/* --- Loading and Error States --- */
+/* --- Loading and Error States (with Skeleton Shimmer) --- */
+@keyframes noshViewShimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.view-skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.04) 0%,
+        rgba(255, 255, 255, 0.09) 50%,
+        rgba(255, 255, 255, 0.04) 100%
+    );
+    background-size: 200% 100%;
+    animation: noshViewShimmer 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    border-radius: var(--radius-sm);
+}
+
+.skeleton-view-doc {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 0 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sk-view-title {
+    height: 38px;
+    width: 60%;
+}
+
+.sk-view-meta {
+    height: 14px;
+    width: 140px;
+    border-radius: 4px;
+}
+
+.sk-view-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sk-view-line {
+    height: 15px;
+    border-radius: 4px;
+}
+
+.sk-view-code {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin: 16px 0;
+}
+
+.sk-view-code-header {
+    height: 40px;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.sk-view-code-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.sk-view-code-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.45;
+}
+
+.sk-view-code-body {
+    padding: 20px;
+    background: var(--bg-code);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .state-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px;
-    color: var(--text-muted);
-    gap: 14px;
+    padding: 20px 0;
+    width: 100%;
 }
 .loading-spinner {
     width: 32px;

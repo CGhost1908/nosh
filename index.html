@@ -53,15 +53,15 @@
                 </h1>
 
                 <p class="hero-subtitle">
-                    Fast, local-first desktop notes for developers and CS students. Write code snippets with 15+ syntax highlighters, control your Spotify playlist on canvas, and back up securely to Google Drive.
+                    Fast, local-first desktop workstation for developers and CS students. Write code snippets with 18+ syntax highlighters, map ideas with an interactive Knowledge Graph, play YouTube &amp; Spotify in-app, and sync to Google Drive.
                 </p>
 
                 <div class="hero-actions">
-                    <a href="https://drive.google.com/file/d/16yYs2YP2uiiBRqtOq2pzpqH1I5x278Wt/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-hero">
+                    <a href="https://github.com/CGhost1908/nosh/releases/download/v1.4.0/nosh-1.4.0-setup.exe" download class="btn btn-primary btn-hero">
                         <iconify-icon icon="mdi:microsoft-windows" class="btn-hero-icon"></iconify-icon>
                         <div class="btn-text-group">
                             <span class="btn-title">Download for Windows</span>
-                            <span class="btn-subtitle">v1.3.4 Installer • 99.7 MB • Free</span>
+                            <span class="btn-subtitle">v1.4.0 Installer • 100.3 MB • Direct Download</span>
                         </div>
                     </a>
                     <a href="https://github.com/CGhost1908/nosh-source" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-hero-secondary">
@@ -165,34 +165,52 @@
                 <div class="release-highlight-card" id="changelog">
                     <div class="release-top">
                         <div class="release-header-info">
-                            <span class="badge-status">LATEST STABLE</span>
-                            <h3 class="release-version-title">Nosh v1.3.4 (Windows)</h3>
-                            <span class="release-specs-sub">Windows 10 / 11 • 64-bit Installer • ~99.7 MB</span>
+                            <span class="badge-status">LATEST STABLE • MAJOR UPDATE</span>
+                            <h3 class="release-version-title">Nosh v1.4.0 (Windows)</h3>
+                            <span class="release-specs-sub">Windows 10 / 11 • 64-bit Installer • ~100.3 MB • Direct Download</span>
                         </div>
-                        <a href="https://drive.google.com/file/d/16yYs2YP2uiiBRqtOq2pzpqH1I5x278Wt/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-download-action">
-                            <iconify-icon icon="lucide:download"></iconify-icon>
-                            <span>Download v1.3.4</span>
-                        </a>
+                        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.45rem;">
+                            <a href="https://github.com/CGhost1908/nosh/releases/download/v1.4.0/nosh-1.4.0-setup.exe" download class="btn btn-primary btn-download-action">
+                                <iconify-icon icon="lucide:download"></iconify-icon>
+                                <span>Download v1.4.0 (.exe)</span>
+                            </a>
+                            <a href="https://drive.google.com/file/d/1nN2DUrYZYFrGkBfK4GRvGz0wf-VdNR42/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="font-size: 0.78rem; color: var(--text-muted); display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: underline; text-underline-offset: 3px;">
+                                <iconify-icon icon="logos:google-drive" style="font-size: 0.85rem;"></iconify-icon>
+                                <span>Google Drive Mirror</span>
+                            </a>
+                        </div>
                     </div>
 
                     <div class="changelog-panel">
-                        <h4 class="changelog-title">What's new in v1.3.4</h4>
+                        <h4 class="changelog-title">What's new in v1.4.0 (Patch Notes)</h4>
                         <ul class="changelog-entries">
                             <li>
                                 <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
-                                <span><strong>Google Drive Cloud Sync:</strong> Automatic workspace backups and one-click cloud restore.</span>
+                                <span><strong>Interactive Knowledge Graph (Ctrl+G):</strong> Force-directed 60fps canvas graph visualizing <code>[[Wiki-Links]]</code> and bidirectional backlinks across your vault with pan, zoom, and cluster physics.</span>
                             </li>
                             <li>
                                 <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
-                                <span><strong>Web Note Publishing:</strong> Generate clean web-viewable links for notes to share with colleagues.</span>
+                                <span><strong>Built-in YouTube Companion &amp; Floating PiP:</strong> Embedded ad-free YouTube Lofi/study player with custom transport controls and a detachable always-on-top Picture-in-Picture window.</span>
                             </li>
                             <li>
                                 <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
-                                <span><strong>Spotify Controller Refinements:</strong> Smoother volume slider response and real-time playback updates.</span>
+                                <span><strong>Sidebar Folders, Pinning &amp; Tag Taxonomy:</strong> Organize notes into custom color-coded folders with drag-and-drop, pin key notes to top, and filter by <code>#hashtags</code> and full-text search snippets.</span>
                             </li>
                             <li>
                                 <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
-                                <span><strong>Performance Boost:</strong> Faster initial startup and reduced memory consumption on long sessions.</span>
+                                <span><strong>Command Palette (Ctrl+K) &amp; Engineering Templates:</strong> Fuzzy quick-switcher to jump to any note or action instantly, plus 5 ready-to-use templates (System RFC, Bug Postmortem, Meeting Notes, Daily Log, Algorithm).</span>
+                            </li>
+                            <li>
+                                <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                                <span><strong>KaTeX Math Formulas, Checklists &amp; Zen Mode:</strong> Live inline (<code>$...$</code>) and block (<code>$$...$$</code>) LaTeX math rendering, interactive task lists, slide-out Document Outline (<code>Ctrl+Shift+O</code>), in-note Find &amp; Replace (<code>Ctrl+H</code>), and distraction-free Focus Mode (<code>Ctrl+Shift+F</code>).</span>
+                            </li>
+                            <li>
+                                <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                                <span><strong>Studio-Grade PDF, Markdown Export &amp; Cloud Publishing:</strong> Crisp vector PDF export with syntax highlighting, Markdown (<code>.md</code>) export &amp; drag-and-drop import, plus instant Web Publishing with automatic Catbox media hosting.</span>
+                            </li>
+                            <li>
+                                <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                                <span><strong>4 App Themes, 45+ Code Themes &amp; Trash Recovery:</strong> Switch between <em>Obsidian Dark</em>, <em>OLED Black</em>, <em>Nord Slate</em>, and <em>Tokyo Night</em>, change code block languages live, and recover deleted notes from the built-in Trash manager.</span>
                             </li>
                         </ul>
                     </div>
@@ -203,6 +221,13 @@
                     <h3 class="archive-header-title">Release Archive</h3>
                     <p class="archive-subtext">Looking for a specific prior version? Previous builds are archived below:</p>
                     <div class="archive-rows">
+                        <div class="archive-row">
+                            <div class="archive-left">
+                                <span class="arch-ver">v1.3.4</span>
+                                <span class="arch-meta">99.7 MB</span>
+                            </div>
+                            <a href="https://drive.google.com/file/d/16yYs2YP2uiiBRqtOq2pzpqH1I5x278Wt/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="arch-link">Download</a>
+                        </div>
                         <div class="archive-row">
                             <div class="archive-left">
                                 <span class="arch-ver">v1.3.2</span>

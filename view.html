@@ -195,8 +195,10 @@
     <!-- CodeMirror & Dracula Theme -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/javascript/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/python/python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.18/mode/rust/rust.min.js"></script>
@@ -247,8 +249,37 @@
     <!-- Document Reader Container (Clean Flat Document Layout) -->
     <main class="reader-container" id="content">
         <div class="state-container" id="loading-state">
-            <div class="loading-spinner"></div>
-            <div class="loading-text">Loading document...</div>
+            <div class="skeleton-view-doc">
+                <div class="view-skeleton sk-view-title"></div>
+                <div class="view-skeleton sk-view-meta"></div>
+                <div class="sk-view-paragraphs">
+                    <div class="view-skeleton sk-view-line" style="width: 96%;"></div>
+                    <div class="view-skeleton sk-view-line" style="width: 88%;"></div>
+                    <div class="view-skeleton sk-view-line" style="width: 94%;"></div>
+                    <div class="view-skeleton sk-view-line" style="width: 65%;"></div>
+                </div>
+                <div class="sk-view-code">
+                    <div class="sk-view-code-header">
+                        <div class="sk-view-code-dots">
+                            <span class="view-skeleton sk-view-code-dot"></span>
+                            <span class="view-skeleton sk-view-code-dot"></span>
+                            <span class="view-skeleton sk-view-code-dot"></span>
+                        </div>
+                        <div class="view-skeleton" style="width: 60px; height: 18px; border-radius: 4px;"></div>
+                    </div>
+                    <div class="sk-view-code-body">
+                        <div class="view-skeleton sk-view-line" style="width: 45%;"></div>
+                        <div class="view-skeleton sk-view-line" style="width: 72%; margin-left: 20px;"></div>
+                        <div class="view-skeleton sk-view-line" style="width: 58%; margin-left: 20px;"></div>
+                        <div class="view-skeleton sk-view-line" style="width: 80%; margin-left: 20px;"></div>
+                        <div class="view-skeleton sk-view-line" style="width: 35%;"></div>
+                    </div>
+                </div>
+                <div class="sk-view-paragraphs">
+                    <div class="view-skeleton sk-view-line" style="width: 92%;"></div>
+                    <div class="view-skeleton sk-view-line" style="width: 78%;"></div>
+                </div>
+            </div>
         </div>
 
         <div class="error-container" id="error-state" style="display: none;">
@@ -360,7 +391,7 @@
                 }
             });
 
-            container.querySelectorAll('.code-block-wrapper .CodeMirror').forEach(el => el.remove());
+            container.querySelectorAll('.code-block-wrapper .CodeMirror, .media-toolbar, .media-resize-handle').forEach(el => el.remove());
         }
 
         async function fetchPublishedNote() {
@@ -502,6 +533,22 @@
                     }
                 };
             });
+
+            if (window.katex) {
+                container.querySelectorAll('.math-formula-block[data-latex], .math-formula-inline[data-latex]').forEach(el => {
+                    const latex = el.getAttribute('data-latex') || '';
+                    const isDisplay = el.getAttribute('data-display-mode') !== 'false' && el.classList.contains('math-formula-block');
+                    if (latex) {
+                        try {
+                            el.innerHTML = window.katex.renderToString(latex, {
+                                displayMode: isDisplay,
+                                throwOnError: false,
+                                strict: false
+                            });
+                        } catch (_) {}
+                    }
+                });
+            }
         }
 
         window.addEventListener('DOMContentLoaded', fetchPublishedNote);
