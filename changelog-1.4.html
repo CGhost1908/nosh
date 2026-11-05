@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nosh v1.4.0 Release & Patch Notes — Built-in YouTube Companion & PiP, Interactive Knowledge Graph, Sidebar Folders, KaTeX Math, Command Palette, and more.">
+    <title>Nosh v1.4.0 Patch Notes | What's New</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .patch-hero {
+            padding: 120px 0 56px 0;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 55%),
+                radial-gradient(circle at 15% 80%, rgba(239, 68, 68, 0.06) 0%, transparent 50%),
+                var(--bg-canvas);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .patch-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1.75rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--text-white);
+            transform: translateX(-3px);
+        }
+
+        .patch-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.85rem;
+        }
+
+        .patch-date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        .patch-title {
+            font-size: clamp(2rem, 3.6vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .patch-lead {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.68;
+            max-width: 760px;
+            margin-bottom: 2rem;
+        }
+
+        .patch-cta-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            padding: 1.25rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius-md);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+        }
+
+        .patch-cta-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .patch-cta-info strong {
+            font-size: 1rem;
+            color: var(--text-white);
+        }
+
+        .patch-cta-info span {
+            font-size: 0.83rem;
+            color: var(--text-dim);
+        }
+
+        .patch-body {
+            padding: 64px 0 96px 0;
+            background: var(--bg-surface);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .patch-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .patch-category-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .patch-category-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .patch-cat-header {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .patch-cat-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-sm);
+            background: rgba(99, 102, 241, 0.14);
+            color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            flex-shrink: 0;
+        }
+
+        .patch-cat-icon.yt {
+            background: rgba(239, 68, 68, 0.14);
+            color: #ef4444;
+        }
+
+        .patch-cat-icon.graph {
+            background: rgba(16, 185, 129, 0.14);
+            color: #10b981;
+        }
+
+        .patch-cat-icon.cloud {
+            background: rgba(56, 189, 248, 0.14);
+            color: #38bdf8;
+        }
+
+        .patch-cat-icon.theme {
+            background: rgba(168, 85, 247, 0.14);
+            color: #c084fc;
+        }
+
+        .patch-cat-title {
+            font-size: 1.28rem;
+            font-weight: 700;
+            color: var(--text-white);
+            letter-spacing: -0.2px;
+        }
+
+        .patch-cat-sub {
+            font-size: 0.84rem;
+            color: var(--text-dim);
+        }
+
+        .patch-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.95rem;
+        }
+
+        .patch-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.94rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .patch-list li iconify-icon {
+            font-size: 1.15rem;
+            color: var(--accent-green);
+            margin-top: 0.22rem;
+            flex-shrink: 0;
+        }
+
+        .patch-list strong {
+            color: var(--text-white);
+        }
+
+        .patch-list code {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            padding: 0.12rem 0.42rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.07);
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="icon.ico" alt="Nosh Logo" class="brand-logo">
+                <span class="brand-name">nosh</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#downloads" class="nav-link">Downloads</a>
+                <a href="changelog-1.4.html" class="nav-link" style="color: var(--text-white);">Changelog</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="https://github.com/CGhost1908/nosh-source" target="_blank" rel="noopener noreferrer" class="nav-link github-nav-link">
+                    <iconify-icon icon="mdi:github"></iconify-icon>
+                    <span>GitHub</span>
+                </a>
+            </nav>
+            <div class="nav-action">
+                <a href="https://github.com/CGhost1908/nosh/releases/download/v1.4.0/nosh-1.4.0-setup.exe" download class="btn btn-sm btn-nav-cta">
+                    <iconify-icon icon="lucide:download"></iconify-icon>
+                    <span>Get Nosh v1.4</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Patch Notes Hero -->
+    <section class="patch-hero">
+        <div class="patch-container">
+            <a href="index.html#downloads" class="back-link">
+                <iconify-icon icon="lucide:arrow-left"></iconify-icon>
+                <span>Back to Overview &amp; Downloads</span>
+            </a>
+
+            <div class="patch-meta-row">
+                <span class="badge-status" style="margin-bottom: 0;">RELEASE v1.4.0</span>
+                <span class="patch-date">// Major Workstation Update • Windows x64</span>
+            </div>
+
+            <h1 class="patch-title">Nosh v1.4.0 Patch Notes</h1>
+            <p class="patch-lead">
+                Version 1.4.0 transforms Nosh from a fast code scratchpad into a complete local-first developer workstation — introducing a built-in YouTube &amp; PiP player in place of Spotify, an interactive 60fps Knowledge Graph, hierarchical folders, KaTeX math rendering, a fuzzy Command Palette, and studio-grade PDF/Markdown exports.
+            </p>
+
+            <div class="patch-cta-bar">
+                <div class="patch-cta-info">
+                    <strong>Nosh v1.4.0 Installer for Windows (64-bit)</strong>
+                    <span>nosh-1.4.0-setup.exe • ~100.3 MB • Includes .nsh file association</span>
+                </div>
+                <div class="release-action-col">
+                    <a href="https://github.com/CGhost1908/nosh/releases/download/v1.4.0/nosh-1.4.0-setup.exe" download class="btn btn-primary btn-download-action">
+                        <iconify-icon icon="lucide:download"></iconify-icon>
+                        <span>Download v1.4.0</span>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1nN2DUrYZYFrGkBfK4GRvGz0wf-VdNR42/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="drive-mirror-link">
+                        <iconify-icon icon="logos:google-drive"></iconify-icon>
+                        <span>Google Drive Mirror</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Patch Breakdown -->
+    <section class="patch-body">
+        <div class="patch-container">
+            <div class="patch-grid">
+
+                <!-- 1. YouTube Companion (Replaces Spotify) -->
+                <div class="patch-category-card">
+                    <div class="patch-cat-header">
+                        <div class="patch-cat-icon yt">
+                            <iconify-icon icon="mdi:youtube"></iconify-icon>
+                        </div>
+                        <div>
+                            <h2 class="patch-cat-title">Built-in YouTube Companion &amp; Floating PiP (Replaces Spotify)</h2>
+                            <div class="patch-cat-sub">Seamless background audio &amp; video without switching windows</div>
+                        </div>
+                    </div>
+                    <ul class="patch-list">
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Spotify Replaced with Native YouTube Player:</strong> Removed the old Spotify API controller in favor of a zero-clutter, embedded YouTube companion widget right inside the left sidebar.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Floating Picture-in-Picture (PiP) Window:</strong> Pop out any study stream, tutorial, or Lofi radio into a frameless, always-on-top mini window that stays visible across your desktop.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Custom Transport &amp; Playlist Support:</strong> Paste any YouTube video or playlist URL, scrub timeline progress, adjust volume, and save your favorite study streams with zero YouTube UI chrome or overlays.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 2. Knowledge Graph & Bidirectional Links -->
+                <div class="patch-category-card">
+                    <div class="patch-cat-header">
+                        <div class="patch-cat-icon graph">
+                            <iconify-icon icon="lucide:network"></iconify-icon>
+                        </div>
+                        <div>
+                            <h2 class="patch-cat-title">Interactive Knowledge Graph &amp; Wiki-Links</h2>
+                            <div class="patch-cat-sub">Connect notes together and explore your engineering vault visually</div>
+                        </div>
+                    </div>
+                    <ul class="patch-list">
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>60fps Force-Directed Knowledge Graph (<code>Ctrl+G</code>):</strong> Visualizes your entire note vault on an interactive HTML5 Canvas with spring attraction, node repulsion, cursor-centered zoom, node dragging, and connected cluster highlighting.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Bidirectional <code>[[Wiki-Links]]</code>:</strong> Link between notes using <code>[[Note Title]]</code> syntax or the Insert Link modal. Clicking an internal link jumps directly to that note or creates it on the fly.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Live Backlinks Popover:</strong> The editor status bar automatically counts incoming references to your active note and lets you jump to any referencing note with one click.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 3. Folders, Search & Organization -->
+                <div class="patch-category-card">
+                    <div class="patch-cat-header">
+                        <div class="patch-cat-icon">
+                            <iconify-icon icon="lucide:folder-kanban"></iconify-icon>
+                        </div>
+                        <div>
+                            <h2 class="patch-cat-title">Sidebar Folders, Pinning &amp; Full-Text Search</h2>
+                            <div class="patch-cat-sub">Keep hundreds of technical notes structured and instantly searchable</div>
+                        </div>
+                    </div>
+                    <ul class="patch-list">
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Color-Coded Sidebar Folders:</strong> Create custom folders, assign accent colors, and organize notes via drag-and-drop or the right-click context menu.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Note Pinning &amp; <code>#Hashtag</code> Taxonomy:</strong> Pin high-priority notes to the top of the sidebar and filter your workspace with auto-extracted <code>#tag</code> chips.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Full-Text Content Search with Snippets:</strong> Sidebar search now scans inside note bodies and code blocks in real time, displaying highlighted match excerpts below each result.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Command Palette (<code>Ctrl+K</code> / <code>Ctrl+P</code>) &amp; Templates:</strong> Fuzzy-search notes or run any editor command from the keyboard, and scaffold new notes from 5 built-in engineering templates (<em>System RFC, Bug Postmortem, Meeting Notes, Daily Log, Algorithm</em>).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 4. Editor, Math & Code Block Upgrades -->
+                <div class="patch-category-card">
+                    <div class="patch-cat-header">
+                        <div class="patch-cat-icon theme">
+                            <iconify-icon icon="lucide:code-2"></iconify-icon>
+                        </div>
+                        <div>
+                            <h2 class="patch-cat-title">KaTeX Math, Code Blocks &amp; Distraction-Free Zen Mode</h2>
+                            <div class="patch-cat-sub">Richer technical writing and faster code editing</div>
+                        </div>
+                    </div>
+                    <ul class="patch-list">
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>KaTeX Mathematical Formulas:</strong> Write inline (<code>$E = mc^2$</code>) and block (<code>$$\sum_{i=1}^n x_i$$</code>) LaTeX equations with instant live rendering and click-to-edit support.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Live Language Switcher &amp; Line Wrap:</strong> Click the language badge on any code block to switch syntax highlighting mode on the fly, or toggle per-block line wrapping.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Interactive Checklists, Outline Drawer &amp; Find/Replace:</strong> Track tasks with persistent checkboxes, navigate headings via the slide-out Document Outline (<code>Ctrl+Shift+O</code>), and run in-note Find &amp; Replace (<code>Ctrl+H</code>).</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Zen Focus Mode (<code>Ctrl+Shift+F</code> / <code>F11</code>):</strong> Collapse the sidebar, toolbar, and status bar into a clean, centered reading &amp; writing canvas.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 5. Export, Cloud Publishing & Themes -->
+                <div class="patch-category-card">
+                    <div class="patch-cat-header">
+                        <div class="patch-cat-icon cloud">
+                            <iconify-icon icon="lucide:share-2"></iconify-icon>
+                        </div>
+                        <div>
+                            <h2 class="patch-cat-title">Studio PDF Export, Cloud Publishing &amp; Workspace Themes</h2>
+                            <div class="patch-cat-sub">Share clean documents anywhere and customize your environment</div>
+                        </div>
+                    </div>
+                    <ul class="patch-list">
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Isolated Vector PDF &amp; Markdown Export:</strong> Export crisp A4 PDFs with GitHub Light syntax highlighting and KaTeX math, or export/import standard Markdown (<code>.md</code>) files via drag-and-drop.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>Cloud Web Publishing &amp; Auto Media Hosting:</strong> Publish notes to shareable web links via Supabase Cloud with automatic Catbox image/video hosting and live KaTeX/code rendering.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>4 Workspace Themes &amp; Trash Recovery Manager:</strong> Choose between <em>Obsidian Dark</em>, <em>OLED Pure Black</em>, <em>Nord Slate</em>, and <em>Tokyo Night</em>, and safely restore deleted notes from the built-in Trash manager.</span>
+                        </li>
+                        <li>
+                            <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
+                            <span><strong>90% Smaller <code>.nsh</code> Files &amp; Local Media Assets:</strong> Clean HTML serialization strips transient editor DOM nodes on save, while pasted images are stored in <code>Saves/assets/</code> for instant loading.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-wrapper">
+            <div class="footer-left-col">
+                <a href="index.html" class="footer-brand-title">
+                    <img src="icon.ico" alt="Nosh Logo" class="footer-logo">
+                    <span>nosh</span>
+                </a>
+                <p class="footer-desc">A distraction-free desktop code notepad. Free &amp; Open Source.</p>
+            </div>
+            <div class="footer-links-col">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+                <a href="terms-of-service.html" class="footer-link">Terms of Service</a>
+                <a href="https://github.com/CGhost1908/nosh-source" target="_blank" rel="noopener noreferrer" class="footer-link">Source Code</a>
+            </div>
+        </div>
+        <div class="container footer-copyright-line">
+            <span>&copy; 2025–2026 Nosh. Crafted with care by <a href="https://github.com/CGhost1908" target="_blank" rel="noopener noreferrer">CGhost1908</a>.</span>
+        </div>
+    </footer>
+
+</body>
+</html>
