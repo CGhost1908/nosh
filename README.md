@@ -4,7 +4,7 @@
 
 ### The Distraction-Free Code Notepad Every Developer Wish They Had.
 
-**Instant Startup. 15+ Language Code Blocks. Native Spotify Playback. Seamless Google Drive Sync.**
+**Instant Startup. 18+ Language Code Blocks. Built-in YouTube & PiP Player. Seamless Google Drive Sync.**
 
 <br/>
 
@@ -57,8 +57,8 @@ Write code blocks directly in your notes. Nosh detects and styles **Python, Java
 </td>
 <td width="50%">
 
-### 🎵 Native Spotify Control Bar
-Control your music **without ever leaving your note**. See live song titles, artist names, album covers, and adjust volume via a sleek radial dial. Stay locked in deep flow state.
+### 📺 Built-in YouTube Companion & PiP
+Replaced Spotify with a native, distraction-free YouTube Lofi & study player **without ever leaving your note**. Stream any video or playlist in the sidebar or pop it out into an always-on-top Picture-in-Picture window.
 
 </td>
 </tr>
@@ -99,7 +99,7 @@ Engineered to open in milliseconds. No heavy language servers, no background ind
 | :--- | :---: | :---: | :---: |
 | **Instant Launch (< 1 sec)** | ✅ | ❌ (5-15s) | ✅ **Lightning fast** |
 | **Code Syntax Highlighting** | ❌ | ✅ | ✅ **15+ Languages** |
-| **Built-in Spotify Remote** | ❌ | ❌ (Extension clutter) | ✅ **Native & seamless** |
+| **Built-in YouTube & PiP Player** | ❌ | ❌ (Extension clutter) | ✅ **Native & seamless** |
 | **Google Drive Cloud Sync** | ❌ | ❌ (Manual Git) | ✅ **1-Click automated** |
 | **Memory Footprint** | Low | Very High (1GB+) | 🟢 **Ultralight** |
 | **Price** | Free | Free | 🎁 **100% Free & Open Source** |

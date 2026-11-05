@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nosh - Fast, distraction-free code notepad for developers. Syntax highlighting for 15+ languages, built-in Spotify controls, and Google Drive sync.">
+    <meta name="description" content="Nosh - Fast, distraction-free code notepad for developers. Syntax highlighting for 18+ languages, built-in YouTube companion player, Knowledge Graph, and Google Drive sync.">
     <meta name="google-site-verification" content="ve9nudQHFPynI0WyPdN-bxzYRxp87cgiv5pRyGfxbDw" />
     <title>Nosh | The Distraction-Free Code Notepad for Developers</title>
     
@@ -53,7 +53,7 @@
                 </h1>
 
                 <p class="hero-subtitle">
-                    Fast, local-first desktop workstation for developers and CS students. Write code snippets with 18+ syntax highlighters, map ideas with an interactive Knowledge Graph, play YouTube &amp; Spotify in-app, and sync to Google Drive.
+                    Fast, local-first desktop workstation for developers and CS students. Write code snippets with 18+ syntax highlighters, map ideas with an interactive Knowledge Graph, play Lofi &amp; study streams on the built-in YouTube player, and sync to Google Drive.
                 </p>
 
                 <div class="hero-actions">
@@ -61,7 +61,7 @@
                         <iconify-icon icon="mdi:microsoft-windows" class="btn-hero-icon"></iconify-icon>
                         <div class="btn-text-group">
                             <span class="btn-title">Download for Windows</span>
-                            <span class="btn-subtitle">v1.4.0 Installer • 100.3 MB • Direct Download</span>
+                            <span class="btn-subtitle">v1.4.0 Installer • 100.3 MB • Free</span>
                         </div>
                     </a>
                     <a href="https://github.com/CGhost1908/nosh-source" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-hero-secondary">
@@ -106,17 +106,17 @@
                     </div>
                 </div>
 
-                <!-- Feature 2: Spotify Integration -->
+                <!-- Feature 2: YouTube Integration -->
                 <div class="feature-card">
                     <div class="feature-media media-contain-box">
-                        <img src="feature2.png" alt="Spotify Player Controller" class="feature-img feature-img-contain">
+                        <img src="feature2.png" alt="YouTube Companion & PiP Player" class="feature-img feature-img-contain">
                     </div>
                     <div class="feature-content">
-                        <div class="feature-icon-wrapper spotify-accent">
-                            <iconify-icon icon="mdi:spotify"></iconify-icon>
+                        <div class="feature-icon-wrapper youtube-accent">
+                            <iconify-icon icon="mdi:youtube"></iconify-icon>
                         </div>
-                        <h3 class="feature-name">Native Spotify Controller</h3>
-                        <p class="feature-text">Never switch windows mid-flow. Track names, album art, play/pause, skip controls, and volume adjustments are pinned right on your canvas.</p>
+                        <h3 class="feature-name">YouTube Companion &amp; PiP</h3>
+                        <p class="feature-text">Replaced Spotify with a native, distraction-free YouTube Lofi &amp; study player. Stream any video or playlist in the sidebar or pop it out into an always-on-top Picture-in-Picture window.</p>
                     </div>
                 </div>
 
@@ -165,18 +165,18 @@
                 <div class="release-highlight-card" id="changelog">
                     <div class="release-top">
                         <div class="release-header-info">
-                            <span class="badge-status">LATEST STABLE • MAJOR UPDATE</span>
+                            <span class="badge-status">LATEST STABLE</span>
                             <h3 class="release-version-title">Nosh v1.4.0 (Windows)</h3>
-                            <span class="release-specs-sub">Windows 10 / 11 • 64-bit Installer • ~100.3 MB • Direct Download</span>
+                            <span class="release-specs-sub">Windows 10 / 11 • 64-bit • ~100.3 MB</span>
                         </div>
-                        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.45rem;">
+                        <div class="release-actions">
                             <a href="https://github.com/CGhost1908/nosh/releases/download/v1.4.0/nosh-1.4.0-setup.exe" download class="btn btn-primary btn-download-action">
                                 <iconify-icon icon="lucide:download"></iconify-icon>
-                                <span>Download v1.4.0 (.exe)</span>
+                                <span>Download v1.4.0</span>
                             </a>
-                            <a href="https://drive.google.com/file/d/1nN2DUrYZYFrGkBfK4GRvGz0wf-VdNR42/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="font-size: 0.78rem; color: var(--text-muted); display: inline-flex; align-items: center; gap: 0.35rem; text-decoration: underline; text-underline-offset: 3px;">
-                                <iconify-icon icon="logos:google-drive" style="font-size: 0.85rem;"></iconify-icon>
-                                <span>Google Drive Mirror</span>
+                            <a href="https://drive.google.com/file/d/1nN2DUrYZYFrGkBfK4GRvGz0wf-VdNR42/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-drive-mirror" title="Download via Google Drive">
+                                <iconify-icon icon="logos:google-drive"></iconify-icon>
+                                <span>Drive Mirror</span>
                             </a>
                         </div>
                     </div>
@@ -186,11 +186,11 @@
                         <ul class="changelog-entries">
                             <li>
                                 <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
-                                <span><strong>Interactive Knowledge Graph (Ctrl+G):</strong> Force-directed 60fps canvas graph visualizing <code>[[Wiki-Links]]</code> and bidirectional backlinks across your vault with pan, zoom, and cluster physics.</span>
+                                <span><strong>YouTube Companion &amp; Floating PiP (Replaces Spotify):</strong> Replaced Spotify with a built-in, distraction-free YouTube Lofi/study player featuring custom controls, playlist support, and an always-on-top Picture-in-Picture mini window.</span>
                             </li>
                             <li>
                                 <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
-                                <span><strong>Built-in YouTube Companion &amp; Floating PiP:</strong> Embedded ad-free YouTube Lofi/study player with custom transport controls and a detachable always-on-top Picture-in-Picture window.</span>
+                                <span><strong>Interactive Knowledge Graph (Ctrl+G):</strong> Force-directed 60fps canvas graph visualizing <code>[[Wiki-Links]]</code> and bidirectional backlinks across your vault with pan, zoom, and cluster physics.</span>
                             </li>
                             <li>
                                 <iconify-icon icon="lucide:check-circle-2"></iconify-icon>
