@@ -8,7 +8,7 @@
 
 <br/>
 
-[![Version](https://img.shields.io/badge/version-1.4.0--stable-6366f1?style=for-the-badge)](https://github.com/CGhost1908/nosh/releases/download/v1.4.0/nosh-1.4.0-setup.exe)
+[![Version](https://img.shields.io/badge/version-1.4.1--stable-6366f1?style=for-the-badge)](https://github.com/CGhost1908/nosh/releases/download/v1.4.1/nosh-1.4.1-setup.exe)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64-10b981?style=for-the-badge)](#-download-nosh)
 [![License](https://img.shields.io/badge/license-MIT-ec4899?style=for-the-badge)](https://github.com/CGhost1908/nosh-source)
 [![GitHub Stars](https://img.shields.io/github/stars/CGhost1908/nosh-source?style=for-the-badge&color=f59e0b)](https://github.com/CGhost1908/nosh-source)
@@ -16,7 +16,7 @@
 <br/>
 
 <p align="center">
-  <a href="https://github.com/CGhost1908/nosh/releases/download/v1.4.0/nosh-1.4.0-setup.exe">
+  <a href="https://github.com/CGhost1908/nosh/releases/download/v1.4.1/nosh-1.4.1-setup.exe">
     <img src="https://img.shields.io/badge/🚀%20DOWNLOAD%20FREE%20FOR%20WINDOWS-6366f1?style=for-the-badge&logo=windows&logoColor=white" height="42">
   </a>
   &nbsp;&nbsp;
@@ -114,7 +114,8 @@ Get the latest stable release for Windows:
 
 | Release | Platform | Size | Download Link |
 | :--- | :--- | :--- | :--- |
-| **v1.4.0 (Latest)** | Windows 10 / 11 (64-bit) | ~100.3 MB | [**Direct Download v1.4.0 (.exe)**](https://github.com/CGhost1908/nosh/releases/download/v1.4.0/nosh-1.4.0-setup.exe) 🚀 · [Drive Mirror](https://drive.google.com/file/d/1nN2DUrYZYFrGkBfK4GRvGz0wf-VdNR42/view?usp=sharing) |
+| **v1.4.1 (Latest)** | Windows 10 / 11 (64-bit) | ~99.8 MB | [**Direct Download v1.4.1 (.exe)**](https://github.com/CGhost1908/nosh/releases/download/v1.4.1/nosh-1.4.1-setup.exe) 🚀 |
+| **v1.4.0** | Windows 10 / 11 (64-bit) | ~100.3 MB | [Download v1.4.0](https://github.com/CGhost1908/nosh/releases/download/v1.4.0/nosh-1.4.0-setup.exe) · [Drive Mirror](https://drive.google.com/file/d/1nN2DUrYZYFrGkBfK4GRvGz0wf-VdNR42/view?usp=sharing) |
 | **v1.3.4** | Windows 10 / 11 (64-bit) | ~99.7 MB | [Download v1.3.4](https://drive.google.com/file/d/16yYs2YP2uiiBRqtOq2pzpqH1I5x278Wt/view?usp=sharing) |
 | **v1.3.2** | Windows (64-bit) | ~75 MB | [Download v1.3.2](https://drive.google.com/file/d/18eJ6CCnOA87BPHexw6TU-0Qtf28-BEiO/view?usp=sharing) |
 | **v1.3.1 Alpha** | Windows (64-bit) | ~75 MB | [Download v1.3.1 Alpha](https://drive.google.com/file/d/1wVXoHRv5g_djpirPmw6j0RVFkEOsNxKf/view?usp=sharing) |
