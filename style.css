@@ -542,23 +542,6 @@ a {
     flex-shrink: 0;
 }
 
-.drive-mirror-link {
-    font-size: 0.84rem;
-    font-weight: 500;
-    color: var(--text-muted);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    transition: var(--transition);
-    white-space: nowrap;
-    vertical-align: middle;
-}
-
-.drive-mirror-link:hover {
-    color: var(--text-white);
-}
 
 .changelog-header-row {
     display: flex;
@@ -1038,9 +1021,6 @@ a {
         align-items: stretch;
     }
 
-    .drive-mirror-link {
-        justify-content: center;
-    }
 
     .btn-download-action {
         width: 100%;
