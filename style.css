@@ -238,16 +238,16 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: clamp(2rem, 4.5vw, 5.5rem);
+    padding-left: clamp(1.5rem, 3.5vw, 4rem);
     padding-right: 0;
     padding-top: 0;
     padding-bottom: 0;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .hero-content {
-    flex: 0 0 min(500px, 40%);
-    max-width: 500px;
+    flex: 0 0 min(470px, 36%);
+    max-width: 470px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
