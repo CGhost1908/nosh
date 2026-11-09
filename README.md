@@ -4,7 +4,7 @@
 
 ### The Distraction-Free Code Notepad Every Developer Wish They Had.
 
-**Instant Startup. 18+ Language Code Blocks. Built-in YouTube & PiP Player. Seamless Google Drive Sync.**
+**Instant Startup. 25 Language Code Blocks. Built-in YouTube & PiP Player. Seamless Google Drive Sync.**
 
 <br/>
 
