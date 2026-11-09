@@ -82,57 +82,401 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features Showcase Section (Alternating Feature Demos) -->
     <section id="features" class="features-section">
         <div class="container">
             <div class="section-heading">
-                <span class="section-tag">// CORE CAPABILITIES</span>
-                <h2 class="section-title">Everything you need to write about code</h2>
-                <p class="section-description">Rich enough for real code, light enough to keep open all day. Your notes live on your machine, not on someone else's server.</p>
+                <span class="section-tag">// ARCHITECTURE & CAPABILITIES</span>
+                <h2 class="section-title">Built for the way developers actually think & write</h2>
+                <p class="section-description">Heavier tools get in the way. Plain text lacks syntax. Nosh provides focused, real-time developer ergonomics with local-first speed.</p>
             </div>
 
-            <div class="features-grid">
-                <!-- Feature 1: Syntax Highlighting -->
-                <div class="feature-card">
-                    <div class="feature-media">
-                        <img src="feature1.png" alt="Code blocks with syntax highlighting" class="feature-img">
-                    </div>
-                    <div class="feature-content">
-                        <div class="feature-icon-wrapper">
+            <div class="feature-showcases">
+                
+                <!-- Showcase 1: Code Blocks in 25 Languages -->
+                <div class="showcase-item">
+                    <div class="showcase-text">
+                        <span class="showcase-tag">
                             <iconify-icon icon="lucide:code-2"></iconify-icon>
+                            <span>CORE EDITOR</span>
+                        </span>
+                        <h3 class="showcase-title">Native Code Blocks in 25 Languages</h3>
+                        <p class="showcase-desc">
+                            Write documentation and code side-by-side without leaving your notes. Powered by the embedded CodeMirror engine, every block provides real syntax highlighting, smart tab indentation, and clean developer utilities.
+                        </p>
+                        <ul class="showcase-bullets">
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>25 Supported Modes:</strong> Python, C++, JavaScript, TypeScript, Rust, Go, Java, C#, SQL, Bash, YAML, JSON and 13 more.</span>
+                            </li>
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>One-Click Utility Bar:</strong> Instant copy with feedback toast, word wrap toggle, and block folding to keep large notes tidy.</span>
+                            </li>
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Automatic Language Sniffing:</strong> Switch language modes on the fly with real language brand icons.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="showcase-visual">
+                        <div class="demo-window demo-code-window">
+                            <div class="demo-window-header">
+                                <div class="window-controls">
+                                    <span class="win-btn red"></span>
+                                    <span class="win-btn yellow"></span>
+                                    <span class="win-btn green"></span>
+                                </div>
+                                <div class="demo-lang-badge">
+                                    <iconify-icon icon="logos:python"></iconify-icon>
+                                    <span>binary_search.py</span>
+                                </div>
+                                <div class="demo-code-actions">
+                                    <span class="demo-action-btn"><iconify-icon icon="lucide:wrap-text"></iconify-icon> Wrap</span>
+                                    <span class="demo-action-btn active"><iconify-icon icon="lucide:copy"></iconify-icon> Copy</span>
+                                </div>
+                            </div>
+                            <div class="demo-code-body">
+                                <div class="code-line"><span class="line-num">1</span><span class="token-keyword">def</span> <span class="token-function">binary_search</span>(arr: list[int], target: int) -> int:</div>
+                                <div class="code-line"><span class="line-num">2</span>    <span class="token-string">"""Fast search over sorted elements with O(log n)."""</span></div>
+                                <div class="code-line"><span class="line-num">3</span>    low, high = <span class="token-number">0</span>, <span class="token-builtin">len</span>(arr) - <span class="token-number">1</span></div>
+                                <div class="code-line"><span class="line-num">4</span>    <span class="token-keyword">while</span> low <= high:</div>
+                                <div class="code-line"><span class="line-num">5</span>        mid = (low + high) // <span class="token-number">2</span></div>
+                                <div class="code-line"><span class="line-num">6</span>        <span class="token-keyword">if</span> arr[mid] == target:</div>
+                                <div class="code-line highlight-line"><span class="line-num">7</span>            <span class="token-keyword">return</span> mid  <span class="token-comment"># Found target index</span></div>
+                                <div class="code-line"><span class="line-num">8</span>        <span class="token-keyword">elif</span> arr[mid] < target:</div>
+                                <div class="code-line"><span class="line-num">9</span>            low = mid + <span class="token-number">1</span></div>
+                                <div class="code-line"><span class="line-num">10</span>        <span class="token-keyword">else</span>:</div>
+                                <div class="code-line"><span class="line-num">11</span>            high = mid - <span class="token-number">1</span></div>
+                                <div class="code-line"><span class="line-num">12</span>    <span class="token-keyword">return</span> -<span class="token-number">1</span></div>
+                            </div>
+                            <div class="demo-window-footer">
+                                <span class="status-pill"><span class="dot-online"></span> Python 3.12 Mode</span>
+                                <span class="status-stat">12 lines • 294 bytes</span>
+                            </div>
                         </div>
-                        <h3 class="feature-name">Code Blocks in 25 Languages</h3>
-                        <p class="feature-text">CodeMirror-powered blocks with real syntax highlighting for C++, Python, JavaScript, Java, Go, Rust, SQL, HTML/CSS and more. Copy, wrap, or collapse any block in one click.</p>
                     </div>
                 </div>
 
-                <!-- Feature 3: Drive Sync -->
-                <div class="feature-card">
-                    <div class="feature-media">
-                        <img src="feature3.png" alt="Google Drive Sync Integration" class="feature-img">
+                <!-- Showcase 2: YouTube Companion & Floating PiP Player -->
+                <div class="showcase-item">
+                    <div class="showcase-text">
+                        <span class="showcase-tag tag-youtube">
+                            <iconify-icon icon="mdi:youtube"></iconify-icon>
+                            <span>FOCUS &amp; LEARNING</span>
+                        </span>
+                        <h3 class="showcase-title">Built-In YouTube Companion &amp; Picture-in-Picture</h3>
+                        <p class="showcase-desc">
+                            Coding tutorials, technical conference talks, and focus study beats live directly inside Nosh. Never lose your place alt-tabbing between your IDE, browser, and music apps.
+                        </p>
+                        <ul class="showcase-bullets">
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Floating PiP Always-on-Top:</strong> Pop any video out into a distraction-free, frameless window that stays above your editor while you code.</span>
+                            </li>
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Sidebar Companion Player:</strong> Paste any YouTube video or playlist link and listen right beside your notes with zero ad clutter.</span>
+                            </li>
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Zero Extra Heavy Browser Tabs:</strong> Replaces bloated browser windows and Spotify background resource hogging with native playback.</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="feature-content">
-                        <div class="feature-icon-wrapper drive-accent">
-                            <iconify-icon icon="logos:google-drive"></iconify-icon>
+                    <div class="showcase-visual">
+                        <div class="demo-window demo-youtube-window">
+                            <div class="demo-window-header">
+                                <div class="window-controls">
+                                    <span class="win-btn red"></span>
+                                    <span class="win-btn yellow"></span>
+                                    <span class="win-btn green"></span>
+                                </div>
+                                <div class="demo-header-title">
+                                    <iconify-icon icon="mdi:youtube" class="yt-header-icon"></iconify-icon>
+                                    <span>YouTube Companion</span>
+                                </div>
+                                <span class="pip-active-badge"><iconify-icon icon="lucide:external-link"></iconify-icon> PiP Mode Ready</span>
+                            </div>
+                            <div class="demo-player-body">
+                                <div class="player-screen">
+                                    <div class="player-overlay-gradient"></div>
+                                    <div class="player-stream-badge"><span class="dot-live"></span> STUDY STREAM</div>
+                                    <div class="player-visualizer">
+                                        <span class="bar bar-1"></span>
+                                        <span class="bar bar-2"></span>
+                                        <span class="bar bar-3"></span>
+                                        <span class="bar bar-4"></span>
+                                        <span class="bar bar-5"></span>
+                                        <span class="bar bar-6"></span>
+                                        <span class="bar bar-7"></span>
+                                        <span class="bar bar-8"></span>
+                                    </div>
+                                    <div class="player-center-play">
+                                        <iconify-icon icon="mdi:play"></iconify-icon>
+                                    </div>
+                                </div>
+                                <div class="player-info-row">
+                                    <div class="player-meta">
+                                        <h4 class="player-track-name">lofi hip hop radio 📚 - beats to relax/study to</h4>
+                                        <span class="player-channel-name">Lofi Girl • 24/7 Coding & Study Companion</span>
+                                    </div>
+                                    <button class="pip-trigger-btn" title="Pop out into floating window">
+                                        <iconify-icon icon="lucide:picture-in-picture-2"></iconify-icon>
+                                        <span>Pop Out PiP</span>
+                                    </button>
+                                </div>
+                                <div class="player-scrubber">
+                                    <div class="scrub-bar"><div class="scrub-fill"></div></div>
+                                    <div class="scrub-times">
+                                        <span>24:18</span>
+                                        <span>LIVE</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="feature-name">Google Drive Backup</h3>
-                        <p class="feature-text">Back up your whole workspace to your own Google Drive with one click. No Nosh account, no proprietary cloud, no lock-in.</p>
                     </div>
                 </div>
 
-                <!-- Feature 4: Cross Platform Roadmap -->
-                <div class="feature-card">
-                    <div class="feature-media">
-                        <img src="feature4.png" alt="Cross-device sync" class="feature-img">
+                <!-- Showcase 3: Knowledge Graph & Wiki-Links -->
+                <div class="showcase-item">
+                    <div class="showcase-text">
+                        <span class="showcase-tag tag-graph">
+                            <iconify-icon icon="lucide:network"></iconify-icon>
+                            <span>SECOND BRAIN</span>
+                        </span>
+                        <h3 class="showcase-title">Fluid 60fps Knowledge Graph &amp; Wiki-Links</h3>
+                        <p class="showcase-desc">
+                            Turn scattered notes into an interconnected web of engineering knowledge. Type <code>[[Topic]]</code> anywhere to create bidirectional links between notes, concepts, and code libraries.
+                        </p>
+                        <ul class="showcase-bullets">
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Real-time Physics Graph:</strong> Watch your second brain grow dynamically with smooth force-directed clustering and zoomable canvas.</span>
+                            </li>
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Backlink Discovery:</strong> See every note that references your current file, pinpointing dependencies and cross-cutting concepts.</span>
+                            </li>
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Instant Graph Navigation:</strong> Click any node on the graph to jump straight into that workspace note in under 10ms.</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="feature-content">
-                        <div class="feature-icon-wrapper ecosystem-accent">
+                    <div class="showcase-visual">
+                        <div class="demo-window demo-graph-window">
+                            <div class="demo-window-header">
+                                <div class="window-controls">
+                                    <span class="win-btn red"></span>
+                                    <span class="win-btn yellow"></span>
+                                    <span class="win-btn green"></span>
+                                </div>
+                                <div class="demo-header-title">
+                                    <iconify-icon icon="lucide:network"></iconify-icon>
+                                    <span>Interactive Graph View</span>
+                                </div>
+                                <span class="fps-badge">60 FPS Canvas</span>
+                            </div>
+                            <div class="demo-graph-canvas">
+                                <!-- Simulated SVG Connections -->
+                                <svg class="graph-svg" viewBox="0 0 500 320">
+                                    <defs>
+                                        <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#6366f1" stop-opacity="0.6"/>
+                                            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <line x1="250" y1="160" x2="120" y2="80" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="4 4" class="anim-line"/>
+                                    <line x1="250" y1="160" x2="380" y2="90" stroke="url(#lineGrad)" stroke-width="2"/>
+                                    <line x1="250" y1="160" x2="130" y2="240" stroke="url(#lineGrad)" stroke-width="2"/>
+                                    <line x1="250" y1="160" x2="370" y2="230" stroke="url(#lineGrad)" stroke-width="2" stroke-dasharray="4 4" class="anim-line"/>
+                                    <line x1="380" y1="90" x2="370" y2="230" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+                                </svg>
+                                
+                                <!-- Graph Nodes -->
+                                <div class="graph-node node-center" style="left: 50%; top: 50%;">
+                                    <span class="node-glow"></span>
+                                    <span class="node-icon"><iconify-icon icon="lucide:cpu"></iconify-icon></span>
+                                    <span class="node-label">Data Structures</span>
+                                </div>
+                                <div class="graph-node node-sub" style="left: 24%; top: 25%;">
+                                    <span class="node-dot"></span>
+                                    <span class="node-label">Binary Trees</span>
+                                </div>
+                                <div class="graph-node node-sub active" style="left: 76%; top: 28%;">
+                                    <span class="node-dot active"></span>
+                                    <span class="node-label">Algorithms</span>
+                                    <span class="node-badge">4 links</span>
+                                </div>
+                                <div class="graph-node node-sub" style="left: 26%; top: 75%;">
+                                    <span class="node-dot"></span>
+                                    <span class="node-label">Graph Traversal</span>
+                                </div>
+                                <div class="graph-node node-sub" style="left: 74%; top: 72%;">
+                                    <span class="node-dot"></span>
+                                    <span class="node-label">Dynamic Programming</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase 4: Global Quick Note HUD (Ctrl+Alt+N) -->
+                <div class="showcase-item">
+                    <div class="showcase-text">
+                        <span class="showcase-tag tag-hotkey">
+                            <iconify-icon icon="lucide:zap"></iconify-icon>
+                            <span>ZERO CONTEXT SWITCH</span>
+                        </span>
+                        <h3 class="showcase-title">Instant Global Capture with <code>Ctrl + Alt + N</code></h3>
+                        <p class="showcase-desc">
+                            When an idea, bug solution, or snippet strikes while you're working in VS Code, Terminal, or your browser, you shouldn't have to stop what you're doing. A single global keystroke brings up a floating quick-capture HUD.
+                        </p>
+                        <ul class="showcase-bullets">
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>System-Wide Hotkey:</strong> Works over any fullscreen window, browser, or game on Windows 10 & 11 without focus friction.</span>
+                            </li>
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Instant Inbox Routing:</strong> Hit <code>Enter</code> to stash it directly into your Nosh inbox and immediately return to your code.</span>
+                            </li>
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Smart Tagging:</strong> Append tags like <code>#todo</code> or <code>#bug</code> on the fly for automated workspace categorization.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="showcase-visual">
+                        <div class="demo-hud-wrapper">
+                            <div class="demo-hud-modal">
+                                <div class="hud-topbar">
+                                    <div class="hud-hotkey-badge">
+                                        <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>N</kbd>
+                                    </div>
+                                    <span class="hud-status-indicator"><span class="dot-pulse"></span> Active Quick Capture</span>
+                                    <span class="hud-esc-hint"><kbd>Esc</kbd> Dismiss</span>
+                                </div>
+                                <div class="hud-input-zone">
+                                    <div class="hud-text">
+                                        Fix memory leak in websocket stream: clean up buffer pool on disconnect <span class="blinking-cursor">|</span>
+                                    </div>
+                                </div>
+                                <div class="hud-tags-row">
+                                    <span class="hud-tag active"><iconify-icon icon="lucide:hash"></iconify-icon>bugfix</span>
+                                    <span class="hud-tag"><iconify-icon icon="lucide:hash"></iconify-icon>backend</span>
+                                    <span class="hud-tag"><iconify-icon icon="lucide:hash"></iconify-icon>v1.4.2</span>
+                                </div>
+                                <div class="hud-bottom-row">
+                                    <span class="hud-tip">Saves to <strong>Inbox / Daily Notes</strong></span>
+                                    <button class="hud-save-btn">
+                                        <span>Save Note</span>
+                                        <kbd>↵</kbd>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Showcase 5: Cross-Device QR Sync & Note Snapshots -->
+                <div class="showcase-item">
+                    <div class="showcase-text">
+                        <span class="showcase-tag tag-sync">
                             <iconify-icon icon="lucide:smartphone"></iconify-icon>
+                            <span>SECURITY &amp; CONTROL</span>
+                        </span>
+                        <h3 class="showcase-title">Encrypted QR Device Sync &amp; Point-in-Time Snapshots</h3>
+                        <p class="showcase-desc">
+                            Your notes never touch proprietary ad-tracking clouds. Connect desktop and mobile devices seamlessly with authenticated QR pairing, take snapshots before refactoring notes, and back up to your personal Google Drive.
+                        </p>
+                        <ul class="showcase-bullets">
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>QR Code Instant Pairing:</strong> Scan once from another computer or mobile device to sync notes with end-to-end encryption.</span>
+                            </li>
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Revision Snapshots:</strong> Take point-in-time snapshots of any document and roll back changes with a single click.</span>
+                            </li>
+                            <li class="showcase-bullet">
+                                <iconify-icon icon="lucide:check-circle-2" class="bullet-icon"></iconify-icon>
+                                <span><strong>Direct Google Drive Sync:</strong> One-click manual or automatic backup to your own personal Google Drive folder.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="showcase-visual">
+                        <div class="demo-window demo-sync-window">
+                            <div class="demo-window-header">
+                                <div class="window-controls">
+                                    <span class="win-btn red"></span>
+                                    <span class="win-btn yellow"></span>
+                                    <span class="win-btn green"></span>
+                                </div>
+                                <div class="demo-header-title">
+                                    <iconify-icon icon="lucide:shield-check"></iconify-icon>
+                                    <span>Sync &amp; Version History</span>
+                                </div>
+                                <span class="drive-connected-badge"><iconify-icon icon="logos:google-drive"></iconify-icon> Drive Synced</span>
+                            </div>
+                            <div class="demo-sync-body">
+                                <div class="sync-grid-split">
+                                    <!-- QR Pairing Card -->
+                                    <div class="sync-card">
+                                        <div class="sync-card-title">
+                                            <iconify-icon icon="lucide:qr-code"></iconify-icon>
+                                            <span>Scan to Pair Device</span>
+                                        </div>
+                                        <div class="qr-box">
+                                            <div class="qr-matrix-sim">
+                                                <div class="qr-corner top-left"></div>
+                                                <div class="qr-corner top-right"></div>
+                                                <div class="qr-corner bottom-left"></div>
+                                                <div class="qr-scan-line"></div>
+                                                <div class="qr-center-logo"><img src="icon.ico" alt="Nosh"></div>
+                                            </div>
+                                        </div>
+                                        <span class="qr-note">End-to-End Encrypted Tunnel</span>
+                                    </div>
+                                    <!-- Snapshot Timeline Card -->
+                                    <div class="snapshot-card">
+                                        <div class="sync-card-title">
+                                            <iconify-icon icon="lucide:history"></iconify-icon>
+                                            <span>Document Snapshots</span>
+                                        </div>
+                                        <div class="snapshot-list">
+                                            <div class="snapshot-item current">
+                                                <span class="snap-marker"></span>
+                                                <div class="snap-details">
+                                                    <span class="snap-title">Current Revision</span>
+                                                    <span class="snap-time">Just now • 1,420 words</span>
+                                                </div>
+                                            </div>
+                                            <div class="snapshot-item">
+                                                <span class="snap-marker past"></span>
+                                                <div class="snap-details">
+                                                    <span class="snap-title">Pre-Refactor Snapshot</span>
+                                                    <span class="snap-time">15 mins ago • 1,280 words</span>
+                                                </div>
+                                                <span class="snap-rollback-btn">Restore</span>
+                                            </div>
+                                            <div class="snapshot-item">
+                                                <span class="snap-marker past"></span>
+                                                <div class="snap-details">
+                                                    <span class="snap-title">Initial Draft</span>
+                                                    <span class="snap-time">Yesterday, 19:40</span>
+                                                </div>
+                                                <span class="snap-rollback-btn">Restore</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="feature-name">Sync Across Devices</h3>
-                        <p class="feature-text">Pair another device by scanning a QR code and keep your notes in sync with end-to-end encryption. Take snapshots and roll back any note when you need to.</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
