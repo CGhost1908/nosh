@@ -340,7 +340,7 @@ a {
 
 .hero-mockup-image {
     width: auto;
-    max-width: 100%;
+    max-width: none;
     height: 100%;
     object-fit: contain;
     object-position: bottom right;
