@@ -332,13 +332,12 @@ a {
     position: relative;
     z-index: 1;
     overflow: visible;
-    height: 100vh;
 }
 
 .hero-mockup-image {
     width: 100%;
     max-width: 920px;
-    height: 100%;
+    max-height: calc(100vh - 120px);
     object-fit: contain;
     object-position: center;
     display: block;
