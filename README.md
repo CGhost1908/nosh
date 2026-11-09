@@ -85,7 +85,7 @@ Engineered to open in milliseconds. No heavy language servers, no background ind
 ## 🖥️ A Sneak Peek Inside
 
 <div align="center">
-  <img src="mockup1.png" alt="Nosh Interface Preview" width="850" style="border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.6);" />
+  <img src="mockup.png" alt="Nosh Interface Preview" width="850" style="border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.6);" />
   <p><em>The Nosh workspace: dark-mode canvas, embedded code blocks, sidebar folders, and the built-in YouTube player.</em></p>
 </div>
 
