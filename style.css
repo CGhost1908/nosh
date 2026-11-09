@@ -238,7 +238,7 @@ a {
     padding-left: clamp(2rem, 5.5vw, 6rem);
     padding-right: clamp(1.5rem, 3.5vw, 4rem);
     padding-top: 2rem;
-    padding-bottom: 2.5rem;
+    padding-bottom: 0;
     gap: 2.5rem;
 }
 
