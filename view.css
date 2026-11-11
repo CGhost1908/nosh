@@ -316,6 +316,149 @@ body {
     border-top: 1px solid var(--border-subtle);
     margin: 28px 0;
 }
+.doc-body code.inline-code,
+.doc-body :not(pre) > code {
+    font-family: 'JetBrains Mono', Consolas, monospace;
+    font-size: 0.88em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-subtle);
+    color: #e2e8f0;
+}
+.doc-body .table-container {
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 14px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    scrollbar-width: thin;
+}
+.doc-body table {
+    width: max-content;
+    max-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 14px 0;
+    font-size: 12.5px;
+    line-height: 1.45;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    overflow: hidden;
+    font-variant-numeric: tabular-nums;
+    box-sizing: border-box;
+}
+.doc-body .table-container table {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    width: max-content;
+    max-width: 100%;
+}
+.doc-body th, .doc-body td {
+    border-bottom: 1px solid var(--border-subtle);
+    border-right: 1px solid var(--border-subtle);
+    padding: 6px 12px;
+    text-align: left;
+    vertical-align: top;
+    color: #c9d1d9;
+    max-width: 850px;
+    word-break: break-word;
+}
+.doc-body th {
+    background: rgba(255, 255, 255, 0.04);
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    color: #f1f5f9;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 7px 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.doc-body th:last-child, .doc-body td:last-child {
+    border-right: none;
+}
+.doc-body tr:last-child td {
+    border-bottom: none;
+}
+.doc-body tr:nth-child(even) td {
+    background: rgba(255, 255, 255, 0.015);
+}
+.doc-body tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.04);
+}
+.doc-body td code {
+    font-family: var(--font-code, monospace);
+    font-size: 11.5px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-subtle);
+}
+.doc-body td p, .doc-body th p {
+    margin: 0;
+}
+/* Table Column Resizer */
+.table-col-resizer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 6px;
+    cursor: col-resize;
+    user-select: none;
+    z-index: 10;
+}
+.table-col-resizer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 2px;
+    background: transparent;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+.table-col-resizer:hover::after,
+.table-col-resizer.is-active::after {
+    background: var(--accent, #6366f1);
+    box-shadow: 0 0 6px var(--accent-glow, rgba(99, 102, 241, 0.4));
+}
+body.is-table-resizing {
+    cursor: col-resize !important;
+    user-select: none !important;
+}
+body.is-table-resizing * {
+    user-select: none !important;
+    cursor: col-resize !important;
+}
+.doc-body .claude-embedded-diagram {
+    margin: 16px 0;
+    padding: 16px 18px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    text-align: center;
+    overflow-x: auto;
+}
+.doc-body .claude-embedded-diagram svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.doc-body .claude-diagram-caption {
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: var(--text-secondary);
+}
 
 /* --- Interactive Checklists --- */
 .checklist-item {
